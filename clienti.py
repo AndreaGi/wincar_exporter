@@ -69,45 +69,71 @@ class Cliente:
                 nome_banca, abi, cab, conto, cliente_flag):
 
         self.tableName = "cliente"
-
         if cliente_flag == 'F':
             self.tableName = "fornitore"
-        self.codice = codice.strip()
-        self.ragione_sociale = f"{ragione_sociale} {ragione_sociale2}".strip().replace("\"", "")
-        self.id_indirizzo = "NULL"
-        self.dettagli_indirizzo = Indirizzo(indirizzo, cap, citta, provincia, codice_comune_aci)
-        self.sesso = ""
-        self.azienda = 0
+
         if sesso.strip() != '':
             if sesso == 'M' or sesso == 'F':
                 self.sesso = sesso.strip()
             else:
                 self.azienda = 1
-        self.telefono = telefono.strip()
-        self.fax = fax.strip()
-        self.email = email.strip()
-        self.codice_fiscale = codice_fiscale.strip()
-        self.partita_iva = partita_iva.strip()
-        self.id_banca = "NULL"
+
+        self.dettagli_indirizzo = Indirizzo(indirizzo, cap, citta, provincia, codice_comune_aci)
         self.dettagli_banca = DettagliBanca(nome_banca, abi, cab, conto)
 
+        self.data = {
+           'codice': codice.strip(),
+           'ragione_sociale':  f"{ragione_sociale} {ragione_sociale2}".strip().replace("\"", ""),
+            'id_indirizzo': 'NULL',
+            'sesso' : self.sesso,
+            'azienda': self.azienda,
+            'telefono': telefono.strip(),
+            'fax': fax.strip(),
+            'email': email.strip(),
+            'codice_fiscale': codice_fiscale.strip(),
+            'partita_iva': partita_iva.strip(),
+            'id_banca': 'NULL',
+        }
+
+        #
+        # self.codice = codice.strip()
+        # self.ragione_sociale = f"{ragione_sociale} {ragione_sociale2}".strip().replace("\"", "")
+        # self.id_indirizzo = "NULL"
+        # self.dettagli_indirizzo = Indirizzo(indirizzo, cap, citta, provincia, codice_comune_aci)
+        # self.sesso = ""
+        # self.azienda = 0
+        # if sesso.strip() != '':
+        #     if sesso == 'M' or sesso == 'F':
+        #         self.sesso = sesso.strip()
+        #     else:
+        #         self.azienda = 1
+        # self.telefono = telefono.strip()
+        # self.fax = fax.strip()
+        # self.email = email.strip()
+        # self.codice_fiscale = codice_fiscale.strip()
+        # self.partita_iva = partita_iva.strip()
+        # self.id_banca = "NULL"
+        # self.dettagli_banca = DettagliBanca(nome_banca, abi, cab, conto)
+
     def buildSQLQuery(self):
-        return f"INSERT INTO {self.tableName} (codice, ragione_sociale, indirizzo, sesso, azienda, telefono," \
-               f"fax, email, codice_fiscale, partita_iva, banca) VALUES " \
-               f"(\"{self.codice}\", \"{self.ragione_sociale}\", {self.id_indirizzo}, \"{self.sesso}\", {self.azienda}, " \
-               f"\"{self.telefono}\", \"{self.fax}\", \"{self.email}\", \"{self.codice_fiscale}\", " \
-               f"\"{self.partita_iva}\", {self.id_banca});"
+        return "INSERT INTO {self.tableName} (codice, ragione_sociale, indirizzo, sesso, azienda, telefono," \
+               "fax, email, codice_fiscale, partita_iva, banca) VALUES " \
+               "( %(codice)s, %(ragione_sociale)s, %(id_indirizzo)s, %(sesso)s, %(azienda)s, %(telefono)s, " \
+               "%(fax)s, %(email)s, %(codice_fiscale)s, %(partita_iva)s, %(id_banca)s)"
+               # f"(\"{self.codice}\", \"{self.ragione_sociale}\", {self.id_indirizzo}, \"{self.sesso}\", {self.azienda}, " \
+               # f"\"{self.telefono}\", \"{self.fax}\", \"{self.email}\", \"{self.codice_fiscale}\", " \
+               # f"\"{self.partita_iva}\", {self.id_banca});"
 
     def insertQuery(self, cur):
         if self.dettagli_indirizzo.indirizzo.strip() != "":
-            self.id_indirizzo = self.dettagli_indirizzo.insertQuery(cur)
+            self.data['id_indirizzo'] = self.dettagli_indirizzo.insertQuery(cur)
 
         if self.dettagli_banca.banca.strip() != "":
-            self.id_banca = self.dettagli_banca.insertQuery(cur)
+            self.data['id_banca'] = self.dettagli_banca.insertQuery(cur)
 
         query = self.buildSQLQuery()
         # print(query)
-        cur.execute(query)
+        cur.execute(query, self.data)
 
 
 class DettagliBanca:

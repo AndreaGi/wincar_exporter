@@ -1,179 +1,185 @@
+from datetime import date
 def null_date():
     return b'   '
 
 def convert_date(byte):
     if byte == null_date():
-        return "NULL"
-    date = ""
+        return
+    year = 0
     # print(byte[0])
     # print(byte[1])
     # print(byte[2])
     match byte[0]:
         case 101:
-            date = "1965"
+            year = 1965
         case 129:
-            date = "1981"
+            year = 1981
         case 136:
-            date = "1988"
+            year = 1988
         case 137:
-            date = "1989"
+            year = 1989
         case 144:
-            date = "1990"
+            year = 1990
         case 145:
-            date = "1991"
+            year = 1991
         case 146:
-            date = "1992"
+            year = 1992
         case 147:
-            date = "1993"
+            year = 1993
         case 148:
-            date = "1994"
+            year = 1994
         case 149:
-            date = "1995"
+            year = 1995
         case 150:
-            date = "1996"
+            year = 1996
         case 151:
-            date = "1997"
+            year = 1997
         case 152:
-            date = "1998"
+            year = 1998
         case 153:
-            date = "1999"
+            year = 1999
         case 160:
-            date = "2000"
+            year = 2000
         case 161:
-            date = "2001"
+            year = 2001
         case 162:
-            date = "2002"
+            year = 2002
         case 163:
-            date = "2003"
+            year = 2003
         case 164:
-            date = "2004"
+            year = 2004
         case 165:
-            date = "2005"
+            year = 2005
         case 166:
-            date = "2006"
+            year = 2006
         case 167:
-            date = "2007"
+            year = 2007
         case 168:
-            date = "2008"
+            year = 2008
         case 169:
-            date = "2009"
+            year = 2009
         case 176:
-            date = "2010"
+            year = 2010
         case 177:
-            date = "2011"
+            year = 2011
         case 178:
-            date = "2012"
+            year = 2012
         case 179:
-            date = "2013"
+            year = 2013
         case 180:
-            date = "2014"
+            year = 2014
         case 181:
-            date = "2015"
+            year = 2015
         case 182:
-            date = "2016"
+            year = 2016
         case 183:
-            date = "2017"
+            year = 2017
         case 184:
-            date = "2018"
+            year = 2018
         case 185:
-            date = "2019"
+            year = 2019
         case 192:
-            date = "2020"
+            year = 2020
         case 193:
-            date = "2021"
+            year = 2021
         case 194:
-            date = "2022"
+            year = 2022
         case 195:
-            date = "2023"
+            year = 2023
 
+    month = 0
     match byte[1]:
         case 1:
-            date = date + "/01/"
+           month = 1
         case 2:
-            date = date + "/02/"
+           month = 2
         case 3:
-            date = date + "/03/"
+           month = 3
         case 4:
-            date = date + "/04/"
+           month = 4
         case 5:
-            date = date + "/05/"
+           month = 5
         case 6:
-            date = date + "/06/"
+           month = 6
         case 7:
-            date = date + "/07/"
+           month = 7
         case 8:
-            date = date + "/08/"
+           month = 8
         case 9:
-            date = date + "/09/"
+           month = 9
         case 16:
-            date = date + "/10/"
+           month = 10
         case 17:
-            date = date + "/11/"
+           month = 11
         case 18:
-            date = date + "/12/"
+           month = 12
 
+    day = 0
     match byte[2]:
         case 1:
-            date = date + "01"
+            day = 1
         case 2:
-            date = date + "02"
+            day = 2
         case 3:
-            date = date + "03"
+            day = 3
         case 4:
-            date = date + "04"
+            day = 4
         case 5:
-            date = date + "05"
+            day = 5
         case 6:
-            date = date + "06"
+            day = 6
         case 7:
-            date = date + "07"
+            day = 7
         case 8:
-            date = date + "08"
+            day = 8
         case 9:
-            date = date + "09"
+            day = 9
         case 16:
-            date = date + "10"
+            day = 19
         case 17:
-            date = date + "11"
+            day = 11
         case 18:
-            date = date + "12"
+            day = 12
         case 19:
-            date = date + "13"
+            day = 13
         case 20:
-            date = date + "14"
+            day = 14
         case 21:
-            date = date + "15"
+            day = 15
         case 22:
-            date = date + "16"
+            day = 16
         case 23:
-            date = date + "17"
+            day = 17
         case 24:
-            date = date + "18"
+            day = 18
         case 25:
-            date = date + "19"
+            day = 19
         case 32:
-            date = date + "20"
+            day = 20
         case 33:
-            date = date + "21"
+            day = 21
         case 34:
-            date = date + "22"
+            day = 22
         case 35:
-            date = date + "23"
+            day = 23
         case 36:
-            date = date + "24"
+            day = 24
         case 37:
-            date = date + "25"
+            day = 25
         case 38:
-            date = date + "26"
+            day = 26
         case 39:
-            date = date + "27"
+            day = 27
         case 40:
-            date = date + "28"
+            day = 28
         case 41:
-            date = date + "29"
+            day = 29
         case 48:
-            date = date + "30"
+            day = 30
         case 49:
-            date = date + "31"
-    return f"\"{date}\""
+            day = 31
+
+    if year == 0 or month == 0 or day == 0:
+        return
+    return date(year, month, day)
 

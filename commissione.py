@@ -6,7 +6,7 @@ from date_parser import convert_date
 
 
 def export(treeCur, mariaCur):
-    print("Start export articoli magazzino.")
+    print("Start export commissioni.")
     start_time = time.time()
     record = 1000
     record_esportati = 0
@@ -15,25 +15,28 @@ def export(treeCur, mariaCur):
     while (True):
 
         treeCur.execute(
-            f"SELECT TOP {record} SKIP {skip}"
-            "admin.magaz.codice_fornitore, "
-            "admin.magaz.categoria_merc_jet07, "
-            "admin.magaz.unita_misura, "
-            "admin.magaz.codice_articolo, "
-            "admin.magaz.descrizione_articolo, "
-            "admin.magaz.codice_iva_jtt03, "
-            "admin.magaz.qta_confezione, "
-            "admin.magaz.prezzo_listino, "
-            "admin.magaz.prezzo_precedente, "
-            "admin.magaz.data_aggiornamento, "
-            "admin.magaz.prezzo_acquisto, "
-            "admin.magaz.data_ultimo_acquisto, "
-            "admin.magaz.data_ultima_vendita, "
-            "admin.magaz.data_creazione, "
-            "admin.magaz.codice_solo, "
-            "admin.magaz.precodice_solo "
-            "FROM admin.magaz "
-            " ORDER BY admin.magaz.codice_articolo"
+            f"SELECT TOP {record} SKIP {skip} "
+            "admin.com.telaio, "
+            "admin.com.commessa, "
+            "admin.com.targa, "
+            "admin.com.tipo_commessa_jtt2b, "
+            "admin.com.flag, "
+            "admin.com.cliente, "
+            "admin.com.categoria_jtt06, "
+            "admin.com.tipo_pagamento_jtt02, "
+            "admin.com.scadenza_jtt01, "
+            "admin.com.km, "
+            "admin.com.data_preventivo, "
+            "admin.com.nr_preventivo, "
+            "admin.com.data_commessa, "
+            "admin.com.data_chiusura, "
+            "admin.com.nr_documento, "
+            "admin.com.ora_ingresso_garanzia, "
+            "admin.com.flag_ricevuta_fiscale, "
+            "admin.com.importo_pagato, "
+            "admin.com.tipo_documento "
+            "FROM admin.com "
+            "ORDER BY admin.com.commessa "
         )
 
         rows = treeCur.fetchall()
