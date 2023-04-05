@@ -3,7 +3,7 @@ def null_date():
     return b'   '
 
 def convert_date(byte):
-    if byte == null_date():
+    if byte == null_date() or byte == '':
         return
     year = 0
     # print(byte[0])

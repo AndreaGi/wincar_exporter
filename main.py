@@ -9,7 +9,8 @@ import mariadb
 
 import articoli
 import clienti
-
+import commissione
+import database
 
 # The lines below enable the Windoes version of Python to correctly load
 # the native libraries from the current working directory see:
@@ -30,8 +31,7 @@ def main():
     init()
 
     # clienti.exportClienti(cur, mariadb_cur)
-    # clienti.exportClienti(cur, mariadb_cur)
-    articoli.export(cur, mariadb_cur)
+    commissione.export(cur, mariadb_cur)
     commit()
 
     # select()
@@ -61,13 +61,7 @@ def init():
         conn = pyctree.connect(user='ADMIN', password='ADMIN', database='test', host='127.0.0.1', port='6597')
         cur = conn.cursor()
 
-        mariadb_conn = mariadb.connect(
-            user="root",
-            password="6qzlkE3B6hm&",
-            host="167.235.53.57",
-            port=3306,
-            database="officina_dev"
-        )
+        mariadb_conn = database.get_mysql_connection()
     except Exception as e:
         Handle_Exception(e)
 

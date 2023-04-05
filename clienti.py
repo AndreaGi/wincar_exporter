@@ -72,6 +72,8 @@ class Cliente:
         if cliente_flag == 'F':
             self.tableName = "fornitore"
 
+        self.sesso = None
+        self.azienda = 0
         if sesso.strip() != '':
             if sesso == 'M' or sesso == 'F':
                 self.sesso = sesso.strip()
@@ -84,39 +86,19 @@ class Cliente:
         self.data = {
            'codice': codice.strip(),
            'ragione_sociale':  f"{ragione_sociale} {ragione_sociale2}".strip().replace("\"", ""),
-            'id_indirizzo': 'NULL',
-            'sesso' : self.sesso,
+            'id_indirizzo': None,
+            'sesso': self.sesso,
             'azienda': self.azienda,
             'telefono': telefono.strip(),
             'fax': fax.strip(),
             'email': email.strip(),
             'codice_fiscale': codice_fiscale.strip(),
             'partita_iva': partita_iva.strip(),
-            'id_banca': 'NULL',
+            'id_banca': None,
         }
 
-        #
-        # self.codice = codice.strip()
-        # self.ragione_sociale = f"{ragione_sociale} {ragione_sociale2}".strip().replace("\"", "")
-        # self.id_indirizzo = "NULL"
-        # self.dettagli_indirizzo = Indirizzo(indirizzo, cap, citta, provincia, codice_comune_aci)
-        # self.sesso = ""
-        # self.azienda = 0
-        # if sesso.strip() != '':
-        #     if sesso == 'M' or sesso == 'F':
-        #         self.sesso = sesso.strip()
-        #     else:
-        #         self.azienda = 1
-        # self.telefono = telefono.strip()
-        # self.fax = fax.strip()
-        # self.email = email.strip()
-        # self.codice_fiscale = codice_fiscale.strip()
-        # self.partita_iva = partita_iva.strip()
-        # self.id_banca = "NULL"
-        # self.dettagli_banca = DettagliBanca(nome_banca, abi, cab, conto)
-
     def buildSQLQuery(self):
-        return "INSERT INTO {self.tableName} (codice, ragione_sociale, indirizzo, sesso, azienda, telefono," \
+        return f"INSERT INTO {self.tableName} (codice, ragione_sociale, indirizzo, sesso, azienda, telefono," \
                "fax, email, codice_fiscale, partita_iva, banca) VALUES " \
                "( %(codice)s, %(ragione_sociale)s, %(id_indirizzo)s, %(sesso)s, %(azienda)s, %(telefono)s, " \
                "%(fax)s, %(email)s, %(codice_fiscale)s, %(partita_iva)s, %(id_banca)s)"
@@ -125,55 +107,67 @@ class Cliente:
                # f"\"{self.partita_iva}\", {self.id_banca});"
 
     def insertQuery(self, cur):
-        if self.dettagli_indirizzo.indirizzo.strip() != "":
+        if self.dettagli_indirizzo.data['indirizzo'].strip() != "":
             self.data['id_indirizzo'] = self.dettagli_indirizzo.insertQuery(cur)
 
-        if self.dettagli_banca.banca.strip() != "":
+        if self.dettagli_banca.data['banca'].strip() != "":
             self.data['id_banca'] = self.dettagli_banca.insertQuery(cur)
 
         query = self.buildSQLQuery()
-        # print(query)
+        # print(self.data)
         cur.execute(query, self.data)
 
 
 class DettagliBanca:
     def __init__(self, banca, abi, cab, conto):
-        self.banca = banca.strip().replace("\"", "")
-        self.abi = "NULL"
+        self.abi = None
         if abi.strip().replace("\"", "") != "":
             self.abi = abi.strip().replace("\"", "")
-        self.cab = "NULL"
+
+        self.cab = None
         if cab.strip().replace("\"", "") != "":
             self.cab = cab.strip().replace("\"", "")
-        self.conto = conto.strip().replace("\"", "")
+
+        self.data = {
+            'banca': banca.strip().replace("\"", ""),
+            'abi': self.abi,
+            'cab': self.cab,
+            'conto': conto.strip().replace("\"", "")
+
+        }
 
     def buildSQLInsert(self):
-        return f"INSERT INTO dettagli_banca (banca, abi, cab, conto) VALUES " \
-               f"(\"{self.banca}\", {self.abi}, {self.cab}, \"{self.conto}\"); "
+        return "INSERT INTO dettagli_banca (banca, abi, cab, conto) VALUES " \
+               "(%(banca)s, %(abi)s, %(cab)s, %(conto)s) "
 
     def insertQuery(self, cur):
         query = self.buildSQLInsert()
         # print(query)
-        cur.execute(query)
+        cur.execute(query, self.data)
         return cur.lastrowid
 
 
 class Indirizzo:
     def __init__(self, indirizzo, cap, citta, provincia, cod_aci):
-        self.indirizzo = indirizzo.strip().replace("\"", "")
-        self.cap = cap.strip().replace("\"", "")
-        self.citta = citta.strip().replace("\"", "")
-        self.provincia = provincia.strip().replace("\"", "")
-        self.cod_aci = "NULL"
+
+        self.cod_aci = None
         if cod_aci.strip() != "":
             self.cod_aci = cod_aci.strip().replace("\"", "")
 
+        self.data = {
+            'indirizzo': indirizzo.strip().replace("\"", ""),
+            'cap': cap.strip().replace("\"", ""),
+            'citta': citta.strip().replace("\"", ""),
+            'provincia': provincia.strip().replace("\"", ""),
+            'cod_aci': self.cod_aci
+        }
+
     def buildSQLInsert(self):
-        return f"INSERT INTO indirizzo (indirizzo, cap, citta, provincia_sigla, codice_comune_aci) VALUES " \
-               f"(\"{self.indirizzo}\",\"{self.cap}\",\"{self.citta}\",\"{self.provincia}\",{self.cod_aci});"
+        return "INSERT INTO indirizzo (indirizzo, cap, citta, provincia_sigla, codice_comune_aci) VALUES " \
+               "(%(indirizzo)s, %(cap)s, %(citta)s, %(provincia)s, %(cod_aci)s)"
 
     def insertQuery(self, cur):
         query = self.buildSQLInsert()
         # print(query)
-        cur.execute(query)
+        cur.execute(query, self.data)
         return cur.lastrowid

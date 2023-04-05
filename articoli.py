@@ -3,14 +3,16 @@ import mariadb
 import time
 
 from date_parser import convert_date
-
-
+from fk_utilities import get_id_fornitore, get_id_iva
+global cache_fornitori
+global cache_iva
 def export(treeCur, mariaCur):
     print("Start export articoli magazzino.")
     start_time = time.time()
     record = 1000
     record_esportati = 0
     skip = 0
+
 
     while (True):
 
@@ -50,23 +52,28 @@ def export(treeCur, mariaCur):
 
 def export_row(rows, mariaCur):
     for row in rows:
+        id_fornitore = get_id_fornitore(row[0])
+        id_iva = get_id_iva(row[5])
+        # print(f"{id_fornitore}, {id_iva}")
+
         # print(row)
-        articolo = Articolo(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8],
+        articolo = Articolo(id_fornitore, row[1], row[2], row[3], row[4], id_iva, row[6], row[7], row[8],
                             row[9], row[10], row[11], row[12], row[13], row[14], row[15])
         articolo.insert_query(mariaCur)
 
 
 class Articolo:
-    def __init__(self, codice_fornitore, categoria_merc, unita_misura, codice_articolo, descrizione, cod_iva,
+    def __init__(self, id_fornitore, categoria_merc, unita_misura, codice_articolo, descrizione, id_iva,
                  quantita_confezione, prezzo_listino, prezzo_precedente, data_aggiornamento, prezzo_acquisto,
                  data_ultimo_acquisto, data_ultima_vendita, data_creazione, codice_solo, precodice_solo):
+
         self.data = {
-            'codice_fornitore': codice_fornitore,
+            'id_fornitore': id_fornitore,
             'categoria': categoria_merc.strip(),
             'unita_misura': unita_misura.strip(),
             'codice_articolo': codice_articolo.strip(),
             'descrizione': descrizione.strip(),
-            'cod_iva': cod_iva.strip(),
+            'id_iva': id_iva,
             'quantita_confezione': quantita_confezione,
             'prezzo_listino': prezzo_listino / 100,
             'prezzo_precendente': prezzo_precedente / 100,
@@ -80,11 +87,11 @@ class Articolo:
         }
 
     def build_sql(self):
-        return "INSERT INTO articolo (codice_fornitore, categoria, unita_misura, codice_articolo, descrizione, " \
-               "cod_iva, quantita_confezione, prezzo_listino, prezzo_precedente, data_aggiornamento, prezzo_acquisto, " \
+        return "INSERT INTO articolo (id_fornitore, categoria, unita_misura, codice_articolo, descrizione, " \
+               "id_iva, quantita_confezione, prezzo_listino, prezzo_precedente, data_aggiornamento, prezzo_acquisto, " \
                "data_ultimo_acquisto, data_ultima_vendita, data_creazione, codice_solo, precodice_solo ) " \
-               "VALUES (%(codice_fornitore)s, %(categoria)s, %(unita_misura)s, %(codice_articolo)s, %(descrizione)s, " \
-               "%(cod_iva)s, %(quantita_confezione)s, %(prezzo_listino)s, %(prezzo_precendente)s, %(data_aggiornamento)s, " \
+               "VALUES (%(id_fornitore)s, %(categoria)s, %(unita_misura)s, %(codice_articolo)s, %(descrizione)s, " \
+               "%(id_iva)s, %(quantita_confezione)s, %(prezzo_listino)s, %(prezzo_precendente)s, %(data_aggiornamento)s, " \
                "%(prezzo_acquisto)s, %(data_ultimo_acquisto)s, %(data_ultima_vendita)s, %(data_creazione)s," \
                " %(codice_solo)s, %(precodice_solo)s)"
 
