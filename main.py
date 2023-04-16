@@ -11,6 +11,7 @@ import articoli
 import clienti
 import commissione
 import database
+import riga_commissione
 
 # The lines below enable the Windoes version of Python to correctly load
 # the native libraries from the current working directory see:
@@ -31,7 +32,7 @@ def main():
     init()
 
     # clienti.exportClienti(cur, mariadb_cur)
-    commissione.export(cur, mariadb_cur)
+    riga_commissione.export(cur, mariadb_cur)
     commit()
 
     # select()

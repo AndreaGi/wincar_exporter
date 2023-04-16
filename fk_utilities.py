@@ -7,6 +7,9 @@ global cache_tipo_commessa
 global cache_scadenze
 global cache_cliente
 global cache_categoria
+global cache_commissione
+global cache_tipo_riga
+global cache_articoli
 
 maria_connection = database.get_mysql_connection()
 cursor = maria_connection.cursor()
@@ -18,6 +21,9 @@ cache_tipo_commessa = {}
 cache_scadenze = {}
 cache_cliente = {}
 cache_categoria = {}
+cache_commissione = {}
+cache_tipo_riga = {}
+cache_articoli = {}
 CODICE_FORNITURE_DEFAULT = '00003'
 CODICE_IVA_DEFAULT = '01'
 
@@ -106,3 +112,39 @@ def get_id_categoria(codice):
         return 1
     cache_categoria[codice] = values[0][0]
     return values[0][0]
+
+
+def get_id_commessa(numero):
+    global cache_commissione
+    if numero in cache_commissione:
+        return cache_commissione[numero]
+    cursor.execute("SELECT id FROM commessa WHERE numero = %(numero)s", {'numero': numero})
+    values = cursor.fetchall()
+    cache_commissione[numero] = values[0][0]
+    return values[0][0]
+
+
+def get_id_tipo_riga(codice):
+    global cache_tipo_riga
+    if codice in cache_tipo_riga:
+        return cache_tipo_riga[codice]
+    cursor.execute("SELECT id FROM e_tipo_riga WHERE ext_code = %(codice)s", {'codice': codice})
+    values = cursor.fetchall()
+    cache_tipo_riga[codice] = values[0][0]
+    return values[0][0]
+
+def get_id_articolo(codice):
+    global cache_articoli
+    if codice in cache_articoli:
+        return cache_articoli[codice]
+    cursor.execute("SELECT id FROM articolo WHERE codice_articolo = %(codice)s", {'codice': clear_codice_articolo(codice)})
+    values = cursor.fetchall()
+    if len(values) > 0:
+        cache_articoli[codice] = values[0][0]
+        return values[0][0]
+    return None
+
+def clear_codice_articolo(codiceArticolo):
+    codice_articolo = codiceArticolo.strip()
+    codice_articolo = ' '.join(codice_articolo.split())
+    return codice_articolo

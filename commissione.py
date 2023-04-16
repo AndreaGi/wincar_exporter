@@ -11,7 +11,7 @@ def export(treeCur, mariaCur):
     start_time = time.time()
     record = 1000
     record_esportati = 0
-    skip = 9000
+    skip = 0
 
     while (True):
 
@@ -78,7 +78,7 @@ class Commessa:
             'data_commessa': convert_date(data_commessa),
             'data_chiusura': convert_date(data_chiusura),
             'ora_ingresso_garanzia': ora_ingresso_garanzia,
-            'importo_pagato': importo_pagato,
+            'importo_pagato': importo_pagato / 100,
             'tipo_documento': tipo_documento,
         }
 

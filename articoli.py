@@ -3,7 +3,8 @@ import mariadb
 import time
 
 from date_parser import convert_date
-from fk_utilities import get_id_fornitore, get_id_iva
+from fk_utilities import get_id_fornitore, get_id_iva, clear_codice_articolo
+
 global cache_fornitori
 global cache_iva
 def export(treeCur, mariaCur):
@@ -71,7 +72,7 @@ class Articolo:
             'id_fornitore': id_fornitore,
             'categoria': categoria_merc.strip(),
             'unita_misura': unita_misura.strip(),
-            'codice_articolo': codice_articolo.strip(),
+            'codice_articolo': clear_codice_articolo(codice_articolo.strip()),
             'descrizione': descrizione.strip(),
             'id_iva': id_iva,
             'quantita_confezione': quantita_confezione,
@@ -87,10 +88,10 @@ class Articolo:
         }
 
     def build_sql(self):
-        return "INSERT INTO articolo (id_fornitore, categoria, unita_misura, codice_articolo, descrizione, " \
+        return "INSERT INTO articolo (id_fornitore, unita_misura, codice_articolo, descrizione, " \
                "id_iva, quantita_confezione, prezzo_listino, prezzo_precedente, data_aggiornamento, prezzo_acquisto, " \
                "data_ultimo_acquisto, data_ultima_vendita, data_creazione, codice_solo, precodice_solo ) " \
-               "VALUES (%(id_fornitore)s, %(categoria)s, %(unita_misura)s, %(codice_articolo)s, %(descrizione)s, " \
+               "VALUES (%(id_fornitore)s, %(unita_misura)s, %(codice_articolo)s, %(descrizione)s, " \
                "%(id_iva)s, %(quantita_confezione)s, %(prezzo_listino)s, %(prezzo_precendente)s, %(data_aggiornamento)s, " \
                "%(prezzo_acquisto)s, %(data_ultimo_acquisto)s, %(data_ultima_vendita)s, %(data_creazione)s," \
                " %(codice_solo)s, %(precodice_solo)s)"
@@ -100,3 +101,4 @@ class Articolo:
             query = self.build_sql()
             # print(self.data)
             cur.execute(query, self.data)
+
