@@ -10,6 +10,7 @@ global cache_categoria
 global cache_commissione
 global cache_tipo_riga
 global cache_articoli
+global cache_marca_auto
 
 maria_connection = database.get_mysql_connection()
 cursor = maria_connection.cursor()
@@ -24,6 +25,7 @@ cache_categoria = {}
 cache_commissione = {}
 cache_tipo_riga = {}
 cache_articoli = {}
+cache_marca_auto = {}
 CODICE_FORNITURE_DEFAULT = '00003'
 CODICE_IVA_DEFAULT = '01'
 
@@ -76,6 +78,8 @@ def get_id_tipo_commessa(ext_code):
         return cache_tipo_commessa[ext_code]
     cursor.execute("SELECT id FROM e_tipo_commessa WHERE ext_code = %(ext_code)s", {'ext_code': ext_code})
     values = cursor.fetchall()
+    if len(values) == 0:
+        return None
     cache_tipo_commessa[ext_code] = values[0][0]
     return values[0][0]
 
@@ -98,6 +102,8 @@ def get_id_cliente(codice):
         return cache_cliente[codice]
     cursor.execute("SELECT id FROM cliente WHERE codice = %(codice)s", {'codice': codice})
     values = cursor.fetchall()
+    if len(values) == 0:
+        return 0
     cache_cliente[codice] = values[0][0]
     return values[0][0]
 
@@ -115,13 +121,11 @@ def get_id_categoria(codice):
 
 
 def get_id_commessa(numero):
-    global cache_commissione
-    if numero in cache_commissione:
-        return cache_commissione[numero]
     cursor.execute("SELECT id FROM commessa WHERE numero = %(numero)s", {'numero': numero})
     values = cursor.fetchall()
-    cache_commissione[numero] = values[0][0]
-    return values[0][0]
+    if len(values) > 0:
+        return values[0][0]
+    return None
 
 
 def get_id_tipo_riga(codice):
@@ -143,6 +147,17 @@ def get_id_articolo(codice):
         cache_articoli[codice] = values[0][0]
         return values[0][0]
     return None
+
+def get_id_marca(codice):
+    global cache_marca_auto
+    if codice in cache_marca_auto:
+        return cache_marca_auto[codice]
+    cursor.execute("SELECT id FROM e_marca WHERE ext_code = %(codice)s", {'codice': codice})
+    values = cursor.fetchall()
+    if len(values) > 0:
+        cache_marca_auto[codice] = values[0][0]
+        return values[0][0]
+    return 63
 
 def clear_codice_articolo(codiceArticolo):
     codice_articolo = codiceArticolo.strip()
