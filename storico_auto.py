@@ -2,11 +2,9 @@ import pyctree
 import mariadb
 import time
 
-from fk_utilities import get_id_cliente, get_id_marca
 
-
-def commit(mariaCur):
-    mariaCur.commit()
+def commit(maria_connection):
+    maria_connection.commit()
     return
 
 
@@ -45,9 +43,11 @@ def export(treeCur, mariaCur, conn):
 
 
 def export_row(rows, mariaCur):
+    from fk_utilities import get_id_cliente, get_id_marca
+
     for row in rows:
         # print(row)
-        id_cliente = get_id_cliente(row[0])
+        id_cliente = get_id_cliente(row[0], 'C')
         id_marca = get_id_marca(row[2])
 
         if id_cliente != 0:

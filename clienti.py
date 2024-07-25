@@ -3,12 +3,17 @@ import mariadb
 import time
 
 
-def exportClienti(treeCur, mariaCur):
+def exportClienti(treeCur, mariaCur, conn):
     print("Start export clienti.")
-    export(treeCur, mariaCur)
+    export(treeCur, mariaCur, conn)
 
 
-def export(treeCur, mariaCur):
+def commit(conn):
+    conn.commit()
+    return
+
+
+def export(treeCur, mariaCur, conn):
     start_time = time.time()
     record = 1000
     record_esportati = 0
@@ -44,6 +49,7 @@ def export(treeCur, mariaCur):
         rows = treeCur.fetchall()
         if len(rows) > 0:
             exportRows(rows, mariaCur)
+            commit(conn)
             skip += record
             record_esportati += len(rows)
             print(f"Esportati: {len(rows)}")
@@ -68,10 +74,6 @@ class Cliente:
                  sesso, telefono, fax, email, codice_fiscale, partita_iva,
                 nome_banca, abi, cab, conto, cliente_flag):
 
-        self.tableName = "cliente"
-        if cliente_flag == 'F':
-            self.tableName = "fornitore"
-
         self.sesso = None
         self.azienda = 0
         if sesso.strip() != '':
@@ -95,13 +97,14 @@ class Cliente:
             'codice_fiscale': codice_fiscale.strip(),
             'partita_iva': partita_iva.strip(),
             'id_banca': None,
+            'cliente_flag': cliente_flag
         }
 
     def buildSQLQuery(self):
-        return f"INSERT INTO {self.tableName} (codice, ragione_sociale, indirizzo, sesso, azienda, telefono," \
-               "fax, email, codice_fiscale, partita_iva, banca) VALUES " \
+        return f"INSERT INTO cliente (codice, ragione_sociale, indirizzo, sesso, azienda, telefono," \
+               "fax, email, codice_fiscale, partita_iva, banca, tipo) VALUES " \
                "( %(codice)s, %(ragione_sociale)s, %(id_indirizzo)s, %(sesso)s, %(azienda)s, %(telefono)s, " \
-               "%(fax)s, %(email)s, %(codice_fiscale)s, %(partita_iva)s, %(id_banca)s)"
+               "%(fax)s, %(email)s, %(codice_fiscale)s, %(partita_iva)s, %(id_banca)s, %(cliente_flag)s)"
                # f"(\"{self.codice}\", \"{self.ragione_sociale}\", {self.id_indirizzo}, \"{self.sesso}\", {self.azienda}, " \
                # f"\"{self.telefono}\", \"{self.fax}\", \"{self.email}\", \"{self.codice_fiscale}\", " \
                # f"\"{self.partita_iva}\", {self.id_banca});"

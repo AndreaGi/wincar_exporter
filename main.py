@@ -11,7 +11,11 @@ import articoli
 import clienti
 import commissione
 import database
+import inventario_articoli
+import movimenti_magazzino
 import riga_commissione
+import storico_auto
+from date_parser import convert_date
 
 # The lines below enable the Windoes version of Python to correctly load
 # the native libraries from the current working directory see:
@@ -28,22 +32,17 @@ global conn
 global cur
 global mariadb_cur
 
+
 def main():
     init()
 
-    # clienti.exportClienti(cur, mariadb_cur)
-    riga_commissione.export(cur, mariadb_cur)
-    commit()
-
-    # select()
-    #
-    # manage()
-    #
-    #
-    # if sys.version_info >= (3, 0, 0):
-    #     input("Press <ENTER> key to exit . . .")
-    # else:
-    #     raw_input("Press <ENTER> key to exit . . .")
+    # clienti.exportClienti(cur, mariadb_cur, mariadb_conn)
+    # articoli.export(cur, mariadb_cur, mariadb_conn)
+    # storico_auto.export(cur, mariadb_cur, mariadb_conn)
+    # commissione.export(cur, mariadb_cur, mariadb_conn)
+    # riga_commissione.export(cur, mariadb_cur, mariadb_conn)
+    # inventario_articoli.export(cur, mariadb_cur, mariadb_conn)
+    movimenti_magazzino.export(cur, mariadb_cur, mariadb_conn)
 
     return
 
@@ -69,10 +68,6 @@ def init():
     mariadb_cur = mariadb_conn.cursor()
     return
 
-def commit():
-    mariadb_conn.commit()
-    return
-
 
 def select():
     print("\tExecuting select...")
@@ -81,7 +76,7 @@ def select():
     rows = cur.fetchall()
     for row in rows:
         ##print(row)
-        print(row[0],row[1],convertDate(row[1]))
+        print(row[0],row[1],convert_date(row[1]))
 
     return
 

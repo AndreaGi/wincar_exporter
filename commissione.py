@@ -3,10 +3,14 @@ import mariadb
 import time
 
 from date_parser import convert_date
-from fk_utilities import get_id_cliente, get_id_categoria, get_id_scadenza, get_id_tipo_pagamento, get_id_tipo_commessa
 
 
-def export(treeCur, mariaCur):
+def commit(mariaCur):
+    mariaCur.commit()
+    return
+
+
+def export(treeCur, mariaCur, conn):
     print("Start export commissioni.")
     start_time = time.time()
     record = 1000
@@ -22,7 +26,6 @@ def export(treeCur, mariaCur):
             "admin.com.targa, "
             "admin.com.tipo_commessa_jtt2b, "
             "admin.com.cliente, "
-            "admin.com.categoria_jtt06, "
             "admin.com.tipo_pagamento_jtt02, "
             "admin.com.scadenza_jtt01, "
             "admin.com.km, "
@@ -30,7 +33,8 @@ def export(treeCur, mariaCur):
             "admin.com.data_chiusura, "
             "admin.com.ora_ingresso_garanzia, "
             "admin.com.importo_pagato, "
-            "admin.com.tipo_documento "
+            "admin.com.nr_documento, "
+            "admin.com.data_documento "
             "FROM admin.com "
             "ORDER BY admin.com.commessa "
         )
@@ -38,6 +42,7 @@ def export(treeCur, mariaCur):
         rows = treeCur.fetchall()
         if len(rows) > 0:
             export_row(rows, mariaCur)
+            commit(conn)
             skip += record
             record_esportati += len(rows)
             print(f"Esportati: {len(rows)}")
@@ -48,30 +53,36 @@ def export(treeCur, mariaCur):
 
 
 def export_row(rows, mariaCur):
+    from fk_utilities import get_id_cliente, get_id_scadenza, get_id_tipo_pagamento, \
+        get_id_tipo_commessa, \
+        get_id_auto
+
     for row in rows:
         # print(row)
-        id_cliente = get_id_cliente(row[4])
-        id_categoria = get_id_categoria(row[5])
-        id_pagamento = get_id_tipo_pagamento(row[6])
-        id_scadenza = get_id_scadenza(row[7])
+        id_cliente = get_id_cliente(row[4], 'C')
+        id_pagamento = get_id_tipo_pagamento(row[5])
+        id_scadenza = get_id_scadenza(row[6])
         tipo_commessa = get_id_tipo_commessa(row[3])
+        if tipo_commessa == 1:
+            tipo_commessa = 'E'
+        else:
+            tipo_commessa = 'I'
+        id_auto = get_id_auto(row[0], row[2], id_cliente)
 
-        commessa = Commessa(row[0], row[1], row[2], tipo_commessa, id_cliente, id_categoria, id_pagamento,
-                            id_scadenza, row[8], row[9], row[10], row[11], row[12], row[13])
+        commessa = Commessa(id_auto, row[1], tipo_commessa, id_cliente, id_pagamento,
+                            id_scadenza, row[7], row[8], row[9], row[10], row[11], row[12], row[13])
         commessa.insert_query(mariaCur)
 
 
 class Commessa:
-    def __init__(self, telaio, commessa, targa, tipo_commessa, id_cliente, id_categoria, id_pagamento, id_scadenza,
-                 km, data_commessa, data_chiusura, ora_ingresso_garanzia, importo_pagato, tipo_documento):
+    def __init__(self, id_auto, commessa, tipo_commessa, id_cliente, id_pagamento, id_scadenza,
+                 km, data_commessa, data_chiusura, ora_ingresso_garanzia, importo_pagato, nr_fattura, data_fattura):
 
         self.data = {
-            'telaio': telaio.strip(),
             'commessa': commessa,
-            'targa': targa.strip(),
+            'id_auto': id_auto,
             'tipo_commessa': tipo_commessa,
             'id_cliente': id_cliente,
-            'id_categoria': id_categoria,
             'id_tipo_pagamento': id_pagamento,
             'id_scadenza': id_scadenza,
             'km': km,
@@ -79,16 +90,17 @@ class Commessa:
             'data_chiusura': convert_date(data_chiusura),
             'ora_ingresso_garanzia': ora_ingresso_garanzia,
             'importo_pagato': importo_pagato / 100,
-            'tipo_documento': tipo_documento,
+            'nr_fattura': nr_fattura,
+            'data_fattura': convert_date(data_fattura),
         }
 
     def build_sql(self):
-        return "INSERT INTO commessa (id_cliente, telaio, numero, targa, id_tipo_commessa, id_categoria,  " \
+        return "INSERT INTO commessa (id_cliente, id_auto, numero, tipo,  " \
                "id_tipo_pagamento, id_scadenza, km, data_commessa, data_chiusura, ora_garanzia, " \
-               "importo_pagato, tipo_documento) " \
-               "VALUES (%(id_cliente)s, %(telaio)s, %(commessa)s, %(targa)s, %(tipo_commessa)s, %(id_categoria)s, " \
+               "importo_pagato, nr_fattura, data_fattura) " \
+               "VALUES (%(id_cliente)s, %(id_auto)s, %(commessa)s, %(tipo_commessa)s, " \
                "%(id_tipo_pagamento)s, %(id_scadenza)s, %(km)s, %(data_commessa)s, %(data_chiusura)s, " \
-               "%(ora_ingresso_garanzia)s, %(importo_pagato)s, %(tipo_documento)s)"
+               "%(ora_ingresso_garanzia)s, %(importo_pagato)s, %(nr_fattura)s, %(data_fattura)s)"
 
     def insert_query(self, cur):
         query = self.build_sql()
