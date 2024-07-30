@@ -1,7 +1,7 @@
 import time
 
 from date_parser import convert_date
-from fk_utilities import get_id_commessa, get_id_movimento, get_id_causale, get_id_cliente, \
+from fk_utilities import get_id_commessa, get_id_movimento, get_id_causale, \
     get_id_articolo, get_id_bolla, update_movimento_cache, update_bolla_cache
 
 
@@ -14,7 +14,7 @@ def export(treeCur, mariaCur, conn):
     start_time = time.time()
     record = 1000
     record_letti = 0
-    skip = 1000
+    skip = 0
 
     while (True):
 
@@ -50,44 +50,42 @@ def export(treeCur, mariaCur, conn):
 
 def export_rows(rows, mariaCur):
     for row in rows:
-        print(row)
-        is_commessa = True
-        fk_id = get_id_commessa(row[6])
-        id_articolo = get_id_articolo(row[3])
-        if fk_id is None:
-            is_commessa = False
-            fk_id = get_id_bolla(row[6])
+        # print(row)
+        mov_date = convert_date(row[0])
+        if mov_date.year >= 2019:
+            is_commessa = True
+            fk_id = get_id_commessa(row[6])
+            id_articolo = get_id_articolo(row[3])
             if fk_id is None:
-                fk_id = generate_bolla(row[6], mariaCur)
+                is_commessa = False
+                fk_id = get_id_bolla(row[6])
+                if fk_id is None:
+                    fk_id = generate_bolla(row[6], mov_date, mariaCur)
 
-        if fk_id is not None:
-            mov_id = get_id_movimento(row[1])
-            if mov_id is None:
-                mov_id = add_movimento(row, is_commessa, mariaCur)
+            if fk_id is not None:
+                mov_id = get_id_movimento(row[1])
+                if mov_id is None:
+                    mov_id = add_movimento(row, is_commessa, mariaCur)
 
-            quantita = row[8] if row[8] is not None else 0
-            prezzo_listino = row[9] if row[9] is not None else 0
-            prezzo_netto = row[10] if row[10] is not None else 0
-            sconto = row[11] if row[11] is not None else 0
-            riga_mov = RigaMovimento(mov_id, row[7], id_articolo, is_commessa, fk_id, quantita, prezzo_listino, prezzo_netto, sconto)
-            riga_mov.insert_query(mariaCur)
+                quantita = row[8] if row[8] is not None else 0
+                prezzo_listino = row[9] if row[9] is not None else 0
+                prezzo_netto = row[10] if row[10] is not None else 0
+                sconto = row[11] if row[11] is not None else 0
+                riga_mov = RigaMovimento(mov_id, row[7], id_articolo, is_commessa, fk_id, quantita, prezzo_listino, prezzo_netto, sconto)
+                riga_mov.insert_query(mariaCur)
 
 
 def add_movimento(row, is_commessa, mariaCur):
-    tipo = 'C'
-    if not is_commessa:
-        tipo = 'F'
     id_causale = get_id_causale(row[4])
-    id_cliente = get_id_cliente(row[5], tipo)
-    movimento_data = Movimento(row[1], row[0], id_causale, id_cliente)
+    movimento_data = Movimento(row[1], row[0], id_causale)
     movimento_data.insert_query(mariaCur)
     movId = mariaCur.lastrowid
     update_movimento_cache(movId, row[1])
     return movId
 
 
-def generate_bolla(document_nr, mariaCur):
-    data = Bolla(document_nr)
+def generate_bolla(document_nr, date, mariaCur):
+    data = Bolla(document_nr, date)
     bolla_id = data.insert_query(mariaCur)
     update_bolla_cache(bolla_id, document_nr)
     return bolla_id
@@ -127,24 +125,23 @@ class RigaMovimento:
 
 
 class Movimento:
-    def __init__(self, nr_reg, data_reg, id_causale, id_cliente):
+    def __init__(self, nr_reg, data_reg, id_causale):
 
         self.data = {
             "nr_reg": nr_reg,
-            "id_cliente": id_cliente,
             "id_causale": id_causale,
             "data_reg": convert_date(data_reg),
         }
 
     def build_sql(self):
-        return "INSERT INTO movimento (nr_reg, causale, data_reg, id_cliente) " \
-                "VALUES (%(nr_reg)s, %(id_causale)s, %(data_reg)s, %(id_cliente)s)"
+        return "INSERT INTO movimento (nr_reg, causale, data_reg) " \
+                "VALUES (%(nr_reg)s, %(id_causale)s, %(data_reg)s)"
 
     def insert_query(self, cur):
         if self.data['nr_reg']:
             query = self.build_sql()
-            print("MOV:" + query)
-            print(self.data)
+            # print("MOV:" + query)
+            # print(self.data)
             cur.execute(query, self.data)
             return cur.lastrowid
         return None
@@ -152,15 +149,16 @@ class Movimento:
 
 class Bolla:
 
-    def __init__(self, document_nr):
+    def __init__(self, document_nr, date):
 
         self.data = {
-            "document_nr": document_nr
+            "document_nr": document_nr,
+            "data": date
         }
 
 
     def build_sql(self):
-        return "INSERT INTO bolla (document_nr) VALUES (%(document_nr)s)"
+        return "INSERT INTO bolla (document_nr, data) VALUES (%(document_nr)s, %(data)s)"
 
 
     def insert_query(self, cursor):
