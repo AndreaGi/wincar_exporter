@@ -1,4 +1,5 @@
 import time
+import uuid
 
 from date_parser import convert_date
 from fk_utilities import get_id_commessa, get_id_movimento, get_id_causale, \
@@ -96,6 +97,7 @@ class RigaMovimento:
     def __init__(self, id_mov, numero_riga, id_articolo, is_commessa, id_ext, quantita, prezzo_listino, prezzo_netto, sconto):
 
         self.data = {
+            "uuid": str(uuid.uuid4()),
             "id_movimento": id_mov,
             "numero_riga": numero_riga,
             "id_articolo": id_articolo,
@@ -108,9 +110,9 @@ class RigaMovimento:
         }
 
     def build_sql(self, isCommessa):
-        sql = "INSERT INTO riga_movimento (id_movimento, numero_riga, id_articolo, id_commessa, " \
+        sql = "INSERT INTO riga_movimento (uuid, id_movimento, numero_riga, id_articolo, id_commessa, " \
            "id_bolla, quantita, prezzo_listino, prezzo_netto, sconto) " \
-           "VALUES (%(id_movimento)s, %(numero_riga)s, %(id_articolo)s,"
+           "VALUES (%(uuid)s, %(id_movimento)s, %(numero_riga)s, %(id_articolo)s,"
         if isCommessa is True:
             sql = sql + " %(id_ext)s, NULL, %(quantita)s, %(prezzo_listino)s, %(prezzo_netto)s, %(sconto)s)"
         else:
