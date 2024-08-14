@@ -8,7 +8,7 @@ def get_mysql_connection():
                     password="6qzlkE3B6hm&",
                     host="167.235.53.57",
                     port=3306,
-                    database="officina_dev"
+                    database="1308"
         )
         return mariadb_conn;
     except Exception as e:

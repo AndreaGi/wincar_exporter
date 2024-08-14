@@ -15,7 +15,7 @@ def commit(conn):
 
 def export(treeCur, mariaCur, conn):
     start_time = time.time()
-    record = 1000
+    record = 10
     record_esportati = 0
     skip = 0
 
@@ -30,7 +30,6 @@ def export(treeCur, mariaCur, conn):
             "admin.clfo.cap, "
             "admin.clfo.citta, "
             "admin.clfo.provincia, "
-            "admin.clfo.codice_comune_aci, "
             "admin.clfo.sesso, "
             "admin.clfo.telefono, "
             "admin.clfo.fax, "
@@ -42,7 +41,7 @@ def export(treeCur, mariaCur, conn):
             "admin.clfo.conto_corrente, "
             "admin.clfo.email, "
             "admin.clfo.c_cf "
-            "FROM admin.clfo "
+            "FROM admin.clfodata "
             " ORDER BY admin.clfo.codice"
         )
 
@@ -63,14 +62,14 @@ def exportRows(rows, mariaCur):
     for row in rows:
         # print(row)
         cliente = Cliente(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8],
-                          row[9], row[10], row[17], row[11], row[12], row[13], row[14], row[15], row[16], row[18])
+                          row[9], row[16], row[10], row[11], row[12], row[13], row[14], row[15], row[17])
 
         cliente.insertQuery(mariaCur)
 
 
 class Cliente:
     def __init__(self, codice, ragione_sociale, ragione_sociale2,
-                 indirizzo, cap, citta, provincia, codice_comune_aci,
+                 indirizzo, cap, citta, provincia,
                  sesso, telefono, fax, email, codice_fiscale, partita_iva,
                 nome_banca, abi, cab, conto, cliente_flag):
 
@@ -82,7 +81,7 @@ class Cliente:
             else:
                 self.azienda = 1
 
-        self.dettagli_indirizzo = Indirizzo(indirizzo, cap, citta, provincia, codice_comune_aci)
+        self.dettagli_indirizzo = Indirizzo(indirizzo, cap, citta, provincia)
         self.dettagli_banca = DettagliBanca(nome_banca, abi, cab, conto)
 
         self.data = {
@@ -151,23 +150,18 @@ class DettagliBanca:
 
 
 class Indirizzo:
-    def __init__(self, indirizzo, cap, citta, provincia, cod_aci):
-
-        self.cod_aci = None
-        if cod_aci.strip() != "":
-            self.cod_aci = cod_aci.strip().replace("\"", "")
+    def __init__(self, indirizzo, cap, citta, provincia):
 
         self.data = {
             'indirizzo': indirizzo.strip().replace("\"", ""),
             'cap': cap.strip().replace("\"", ""),
             'citta': citta.strip().replace("\"", ""),
-            'provincia': provincia.strip().replace("\"", ""),
-            'cod_aci': self.cod_aci
+            'provincia': provincia.strip().replace("\"", "")
         }
 
     def buildSQLInsert(self):
-        return "INSERT INTO indirizzo (indirizzo, cap, citta, provincia_sigla, codice_comune_aci) VALUES " \
-               "(%(indirizzo)s, %(cap)s, %(citta)s, %(provincia)s, %(cod_aci)s)"
+        return "INSERT INTO indirizzo (indirizzo, cap, citta, provincia_sigla) VALUES " \
+               "(%(indirizzo)s, %(cap)s, %(citta)s, %(provincia)s)"
 
     def insertQuery(self, cur):
         query = self.buildSQLInsert()

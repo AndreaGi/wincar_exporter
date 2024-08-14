@@ -36,12 +36,12 @@ global mariadb_cur
 def main():
     init()
 
-    # clienti.exportClienti(cur, mariadb_cur, mariadb_conn)
-    # articoli.export(cur, mariadb_cur, mariadb_conn)
-    # storico_auto.export(cur, mariadb_cur, mariadb_conn)
-    # commissione.export(cur, mariadb_cur, mariadb_conn)
-    # riga_commissione.export(cur, mariadb_cur, mariadb_conn)
-    # inventario_articoli.export(cur, mariadb_cur, mariadb_conn)
+    clienti.exportClienti(cur, mariadb_cur, mariadb_conn)
+    articoli.export(cur, mariadb_cur, mariadb_conn)
+    storico_auto.export(cur, mariadb_cur, mariadb_conn)
+    commissione.export(cur, mariadb_cur, mariadb_conn)
+    riga_commissione.export(cur, mariadb_cur, mariadb_conn)
+    inventario_articoli.export(cur, mariadb_cur, mariadb_conn)
     movimenti_magazzino.export(cur, mariadb_cur, mariadb_conn)
 
     return
@@ -58,7 +58,7 @@ def init():
     print("\tLogon to server...")
 
     try:
-        conn = pyctree.connect(user='ADMIN', password='ADMIN', database='test', host='127.0.0.1', port='6597')
+        conn = pyctree.connect(user='ADMIN', password='ADMIN', database='13_08', host='127.0.0.1', port='6597')
         cur = conn.cursor()
 
         mariadb_conn = database.get_mysql_connection()
