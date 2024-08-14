@@ -15,7 +15,7 @@ def commit(conn):
 
 def export(treeCur, mariaCur, conn):
     start_time = time.time()
-    record = 10
+    record = 1000
     record_esportati = 0
     skip = 0
 
