@@ -15,7 +15,7 @@ def commit(conn):
 
 def export(treeCur, mariaCur, conn):
     start_time = time.time()
-    record = 10
+    record = 1000
     record_esportati = 0
     skip = 0
 
@@ -41,7 +41,7 @@ def export(treeCur, mariaCur, conn):
             "admin.clfo.conto_corrente, "
             "admin.clfo.email, "
             "admin.clfo.c_cf "
-            "FROM admin.clfodata "
+            "FROM admin.clfo "
             " ORDER BY admin.clfo.codice"
         )
 

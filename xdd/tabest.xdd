@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="TABEST" minRecLen="152" maxRecLen="152">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="41"/>
+  <part name="TIPO" offset="0" size="1"/>
+  <part name="CODICE" offset="1" size="20"/>
+  <part name="ELEMENTO" offset="21" size="20"/>
+ </key>
+ <schema name="TABEST" size="152">
+  <field name="TIPO" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="ELEMENTO" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="DESCRIZIONE" size="25" type="Alphanum" digits="25" scale="0"/>
+  <field name="DESCRIZIONE2" size="86" type="Alphanum" digits="86" scale="0"/>
+ </schema>
+</table>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="MAGRI" minRecLen="93" maxRecLen="93">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="20"/>
+  <part name="MR_KEY" offset="0" size="20"/>
+ </key>
+ <schema name="MAGRI" size="93">
+  <field name="MR_KEY" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="MR_DESC" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="MR_SCONTO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="MR_FAM" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="MR_PRZLIS" size="5" type="PackedPositive" digits="8" scale="0"/>
+  <field name="MR_PRZPREC" size="5" type="PackedPositive" digits="8" scale="0"/>
+  <field name="MR_UM" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="MR_ATTR" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="MR_QTACONF" size="3" type="PackedPositive" digits="4" scale="0"/>
+  <field name="MR_SESP" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="MR_DTAGG" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="MR_PESO" size="4" type="PackedPositive" digits="7" scale="3"/>
+  <field name="MR_CATMER" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="MR_CODBAR" size="16" type="Alphanum" digits="16" scale="0"/>
+ </schema>
+</table>

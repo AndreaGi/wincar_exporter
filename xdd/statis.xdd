@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="STATIS" minRecLen="900" maxRecLen="900">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="47"/>
+  <part name="STA_DEPOSITO" offset="0" size="2"/>
+  <part name="STA_ANNO_X" offset="2" size="2"/>
+  <part name="STA_TIPO" offset="4" size="1"/>
+  <part name="STA_LIVELLO_1" offset="5" size="10"/>
+  <part name="STA_LIVELLO_2" offset="15" size="32"/>
+ </key>
+ <schema name="STATIS" size="900">
+  <field name="STA_DEPOSITO" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="STA_ANNO_X" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="STA_TIPO" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="STA_LIVELLO_1" indexed="true" size="10" type="Alphanum" digits="10" scale="0"/>
+  <field name="STA_LIVELLO_2" indexed="true" size="32" type="Alphanum" digits="32" scale="0"/>
+  <field name="STA_DTAGG" size="6" type="NumUnsigned" digits="6" scale="0"/>
+  <field name="STA_PROGR_UNO_1" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_UNO_2" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_UNO_3" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_UNO_4" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_UNO_5" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_UNO_6" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_UNO_7" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_UNO_8" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_UNO_9" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_UNO_10" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_UNO_11" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_UNO_12" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DUE_1" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DUE_2" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DUE_3" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DUE_4" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DUE_5" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DUE_6" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DUE_7" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DUE_8" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DUE_9" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DUE_10" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DUE_11" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DUE_12" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_TRE_1" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_TRE_2" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_TRE_3" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_TRE_4" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_TRE_5" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_TRE_6" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_TRE_7" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_TRE_8" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_TRE_9" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_TRE_10" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_TRE_11" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_TRE_12" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_QUATTRO_1" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_QUATTRO_2" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_QUATTRO_3" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_QUATTRO_4" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_QUATTRO_5" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_QUATTRO_6" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_QUATTRO_7" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_QUATTRO_8" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_QUATTRO_9" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_QUATTRO_10" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_QUATTRO_11" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_QUATTRO_12" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_CINQUE_1" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_CINQUE_2" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_CINQUE_3" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_CINQUE_4" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_CINQUE_5" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_CINQUE_6" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_CINQUE_7" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_CINQUE_8" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_CINQUE_9" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_CINQUE_10" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_CINQUE_11" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_CINQUE_12" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SEI_1" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SEI_2" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SEI_3" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SEI_4" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SEI_5" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SEI_6" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SEI_7" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SEI_8" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SEI_9" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SEI_10" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SEI_11" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SEI_12" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SETTE_1" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SETTE_2" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SETTE_3" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SETTE_4" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SETTE_5" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SETTE_6" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SETTE_7" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SETTE_8" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SETTE_9" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SETTE_10" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SETTE_11" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_SETTE_12" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_OTTO_1" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_OTTO_2" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_OTTO_3" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_OTTO_4" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_OTTO_5" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_OTTO_6" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_OTTO_7" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_OTTO_8" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_OTTO_9" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_OTTO_10" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_OTTO_11" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_OTTO_12" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_NOVE_1" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_NOVE_2" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_NOVE_3" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_NOVE_4" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_NOVE_5" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_NOVE_6" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_NOVE_7" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_NOVE_8" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_NOVE_9" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_NOVE_10" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_NOVE_11" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_NOVE_12" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DIECI_1" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DIECI_2" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DIECI_3" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DIECI_4" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DIECI_5" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DIECI_6" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DIECI_7" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DIECI_8" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DIECI_9" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DIECI_10" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DIECI_11" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="STA_PROGR_DIECI_12" size="7" type="PackedSigned" digits="13" scale="2"/>
+  <field name="FILLER893" hidden="true" size="7" type="Alphanum" digits="7" scale="0"/>
+ </schema>
+</table>

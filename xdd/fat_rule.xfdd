@@ -1,0 +1,386 @@
+<XFDrules>
+	<rule sequence="1">
+		<when>
+			<field name="F_NRFAT"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+	<rule sequence="2">
+		<when>
+			<field name="F_TOTFAT"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="3">
+		<when>
+			<field name="F_TOTIVA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="4">
+		<when>
+			<field name="F_IMPONIBILE_1"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="5">
+		<when>
+			<field name="F_AGGCLI_1"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="6">
+		<when>
+			<field name="F_IMPOSTA_1"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="7">
+		<when>
+			<field name="F_IMPONIBILE_2"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="8">
+		<when>
+			<field name="F_AGGCLI_2"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="9">
+		<when>
+			<field name="F_IMPOSTA_2"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="10">
+		<when>
+			<field name="F_IMPONIBILE_3"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="11">
+		<when>
+			<field name="F_AGGCLI_3"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="12">
+		<when>
+			<field name="F_IMPOSTA_3"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="13">
+		<when>
+			<field name="F_IMPONIBILE_4"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="14">
+		<when>
+			<field name="F_AGGCLI_4"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="15">
+		<when>
+			<field name="F_IMPOSTA_4"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="16">
+		<when>
+			<field name="F_IMPONIBILE_5"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="17">
+		<when>
+			<field name="F_AGGCLI_5"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule><rule sequence="18">
+		<when>
+			<field name="F_IMPOSTA_5"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="19">
+		<when>
+			<field name="F_IMPORTO_1"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="20">
+		<when>
+			<field name="F_IMPORTO_2"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="21">
+		<when>
+			<field name="F_IMPORTO_3"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="22">
+		<when>
+			<field name="F_IMPORTO_4"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="23">
+		<when>
+			<field name="F_IMPORTO_5"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="24">
+		<when>
+			<field name="F_IMPORTO_6"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="25">
+		<when>
+			<field name="F_IMPORTO_7"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="26">
+		<when>
+			<field name="F_IMPORTO_8"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="27">
+		<when>
+			<field name="F_IMPORTO_9"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		
+		
+		<rule sequence="28">
+		<when>
+			<field name="F_IMPORTO_10"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="29">
+		<when>
+			<field name="F_IMPORTO_11"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="30">
+		<when>
+			<field name="F_NRPROGR_US"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="31">
+		<when>
+			<field name="F_NRPROG_AN"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="32">
+		<when>
+			<field name="F_ACCONTI"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="33">
+		<when>
+			<field name="F_STATO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="34">
+		<when>
+			<field name="F_NREG"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="35">
+		<when>
+			<field name="F_SPEINCASSO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="36">
+		<when>
+			<field name="F_OMAGGI"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+</XFDrules>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="MAGAZ" minRecLen="320" maxRecLen="320">
+ <key duplicate="false" primary="true">
+  <segment offset="10" size="20"/>
+  <part name="CODICE_ARTICOLO" offset="10" size="20"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="0" size="30"/>
+  <part name="CODICE_FORNITORE" offset="0" size="5"/>
+  <part name="CATEGORIA_MERC_JET07" offset="5" size="3"/>
+  <part name="UNITA_MISURA" offset="8" size="2"/>
+  <part name="CODICE_ARTICOLO" offset="10" size="20"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="5" size="25"/>
+  <part name="CATEGORIA_MERC_JET07" offset="5" size="3"/>
+  <part name="UNITA_MISURA" offset="8" size="2"/>
+  <part name="CODICE_ARTICOLO" offset="10" size="20"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="70" size="30"/>
+  <part name="DESCRIZIONE_ARTICOLO" offset="70" size="30"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="211" size="20"/>
+  <part name="CODICE_ART_FORNITORE" offset="211" size="20"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="280" size="20"/>
+  <part name="CODICE_SOLO" offset="280" size="17"/>
+  <part name="PRECODICE_SOLO" offset="297" size="3"/>
+ </key>
+ <schema name="MAGAZ" size="320">
+  <field name="CODICE_FORNITORE" indexed="true" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="CATEGORIA_MERC_JET07" indexed="true" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="UNITA_MISURA" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CODICE_ARTICOLO" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="CODICE_PRECEDENTE" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="CODICE_SUCCESSIVO" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="DESCRIZIONE_ARTICOLO" indexed="true" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="CODICE_IVA_JTT03" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TIPO_TRASFORMAZIONE" size="1" type="PackedSigned" digits="1" scale="0"/>
+  <field name="COEFF_TRASF" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="MARCHIO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CLASSE_SCONTO_JET21" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="QTA_CONFEZIONE" size="3" type="PackedPositive" digits="5" scale="1"/>
+  <field name="IVA_AGEVOLATA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FILLER117" hidden="true" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="PREZZO_LISTINO" size="5" type="PackedPositive" digits="9" scale="1"/>
+  <field name="PREZZO_PRECEDENTE" size="5" type="PackedPositive" digits="9" scale="1"/>
+  <field name="DATA_AGGIORNAMENTO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="PREZZO_ACQUISTO" size="5" type="PackedPositive" digits="9" scale="1"/>
+  <field name="DATA_ULTIMO_ACQUISTO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_ULTIMA_VENDITA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_CREAZIONE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="K1" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="K2" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="K3" size="2" type="PackedPositive" digits="3" scale="1"/>
+  <field name="K4" size="1" type="PackedPositive" digits="1" scale="0"/>
+  <field name="FILLER157" hidden="true" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="DATA_ULTIMA_MEDIA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="ULTIMA_MEDIA" size="5" type="PackedSigned" digits="9" scale="3"/>
+  <field name="VENDITE_ULT_PERIODO" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="FAMIGLIA_JET35" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="FILLER182" hidden="true" size="4" type="Alphanum" digits="4" scale="0"/>
+  <field name="FLAG_IMBALLAGGIO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="IMBALLO" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="QTA_IMBALLO" size="3" type="PackedPositive" digits="5" scale="0"/>
+  <field name="COBAT" size="1" type="PackedPositive" digits="1" scale="0"/>
+  <field name="CODICE_ART_FORNITORE" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="FILLER231" hidden="true" size="16" type="Alphanum" digits="16" scale="0"/>
+  <field name="QTA_PER_MACCHINA" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="PREZZO_SPECIALE" size="5" type="PackedPositive" digits="9" scale="1"/>
+  <field name="DATA_PENULTIMA_VEND" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="ATTRIBUTO" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="FILLER277" hidden="true" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_SOLO" indexed="true" size="17" type="Alphanum" digits="17" scale="0"/>
+  <field name="PRECODICE_SOLO" indexed="true" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_LISTINO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FILLER303" hidden="true" size="17" type="Alphanum" digits="17" scale="0"/>
+ </schema>
+</table>

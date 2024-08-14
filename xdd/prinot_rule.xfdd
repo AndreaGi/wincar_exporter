@@ -1,0 +1,63 @@
+<XFDrules>
+	<rule sequence="1">
+		<when>
+			<field name="IMPORTO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+	<rule sequence="2">
+		<when>
+			<field name="NUMERO_DOCUMENTO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="3">
+		<when>
+			<field name="NR_PROGRESSIVO_USATO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="4">
+		<when>
+			<field name="NR_PROGRESSIVO_NUOVO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="5">
+		<when>
+			<field name="NR_RITENUTA_ACCONTO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="6">
+		<when>
+			<field name="NR_RIGA_GIORNALE"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+</XFDrules>

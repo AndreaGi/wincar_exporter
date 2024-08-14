@@ -27,6 +27,7 @@ def export(treeCur, mariaCur, conn):
             "admin.comrig.nr_riga, "
             "admin.comrig.codice_articolo, "
             "admin.comrig.descrizione, "
+            "admin.comrig.tipo_addebito,"
             "admin.comrig.um, "
             "admin.comrig.qta, "
             "admin.comrig.prezzo "
@@ -57,12 +58,12 @@ def export_row(rows, mariaCur):
         if id_articolo is not None:
             tipo_riga = ART
 
-        riga = Riga_Commessa(id_commessa, tipo_riga, row[1], id_articolo, row[3], row[4], row[5], row[6])
+        riga = Riga_Commessa(id_commessa, tipo_riga, row[1], id_articolo, row[3], row[4], row[5], row[6], row[7])
         riga.insert_query(mariaCur)
 
 
 class Riga_Commessa:
-    def __init__(self, id_commessa, tipo_riga, numero_riga, id_articolo, descrizione, um, quantita, prezzo):
+    def __init__(self, id_commessa, tipo_riga, numero_riga, id_articolo, descrizione, addebito, um, quantita, prezzo):
 
         self.data = {
             'uuid': str(uuid.uuid4()),
@@ -71,6 +72,7 @@ class Riga_Commessa:
             'numero_riga': numero_riga + 1,
             'id_articolo': id_articolo,
             'descrizione': descrizione.strip(),
+            'addebito': addebito.strip(),
             'um': um,
             'quantita': quantita,
             'prezzo': prezzo / 100,
@@ -78,9 +80,9 @@ class Riga_Commessa:
 
     def build_sql(self):
         return "INSERT INTO riga_commessa (uuid, id_commessa, tipo_riga, numero_riga, id_articolo, " \
-               "descrizione, um, quantita, prezzo, iva ) " \
-               "VALUES (%(uuid)s, %(id_commessa)s, %(tipo_riga)s, %(numero_riga)s, %(id_articolo)s, %(descrizione)s, %(um)s, " \
-               "%(quantita)s, %(prezzo)s, 22)"
+               "descrizione, charge, um, quantita, prezzo, iva ) " \
+               "VALUES (%(uuid)s, %(id_commessa)s, %(tipo_riga)s, %(numero_riga)s, %(id_articolo)s, %(descrizione)s, " \
+                "%(addebito)s, %(um)s, %(quantita)s, %(prezzo)s, 22)"
 
     def insert_query(self, cur):
         query = self.build_sql()

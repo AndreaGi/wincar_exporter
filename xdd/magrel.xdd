@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="MAGREL" minRecLen="49" maxRecLen="49">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="41"/>
+  <part name="CODICE" offset="0" size="20"/>
+  <part name="TIPO" offset="20" size="1"/>
+  <part name="CODICE_RELAZIONE" offset="21" size="20"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="20" size="21"/>
+  <part name="TIPO" offset="20" size="1"/>
+  <part name="CODICE_RELAZIONE" offset="21" size="20"/>
+ </key>
+ <schema name="MAGREL" size="49">
+  <field name="CODICE" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="TIPO" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE_RELAZIONE" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="DATA_SOSTITUZIONE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="TIPO_SOSTITUZIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="NR_PEZZI_NUOVO" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="NR_PEZZI_VECCHIO" size="2" type="PackedPositive" digits="3" scale="0"/>
+ </schema>
+</table>

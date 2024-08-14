@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="MOV" minRecLen="100" maxRecLen="100">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="10"/>
+  <part name="DATA_REG" offset="0" size="3"/>
+  <part name="NR_REG" offset="3" size="4"/>
+  <part name="RIGA" offset="7" size="2"/>
+  <part name="FILLER1" offset="9" size="1"/>
+ </key>
+ <schema name="MOV" size="100">
+  <field name="DATA_REG" indexed="true" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="NR_REG" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="RIGA" indexed="true" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="FILLER1" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE_ARTICOLO" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="CAUSALE_MOVIMENTO_JET10" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CODICE_CLIENTE" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="NUMERO_DOCUMENTO" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="NUMERO_RIGA" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="DEPOSITO" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CATEGORIA_MERC_JET07" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="UNITA_MISURA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CLASSE_SCONTO_JET21" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_DOCUMENTO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="QUANTITA" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="FILLER61" hidden="true" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="PREZZO_LISTINO" size="5" type="PackedPositive" digits="9" scale="1"/>
+  <field name="PREZZO_NETTO" size="5" type="PackedPositive" digits="9" scale="1"/>
+  <field name="SCONTO1" size="3" type="PackedSigned" digits="4" scale="2"/>
+  <field name="SCONTO2" size="3" type="PackedSigned" digits="4" scale="2"/>
+  <field name="SCONTO3" size="3" type="PackedSigned" digits="4" scale="2"/>
+  <field name="NUMERO_ORDINE" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="FILLER89" hidden="true" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="TRASPORTO" size="3" type="PackedPositive" digits="5" scale="0"/>
+  <field name="IMBALLO" size="3" type="PackedPositive" digits="5" scale="0"/>
+  <field name="VETTORE" size="2" type="Alphanum" digits="2" scale="0"/>
+ </schema>
+</table>

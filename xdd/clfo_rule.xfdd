@@ -1,0 +1,103 @@
+<XFDrules>
+	<rule sequence="1">
+		<when>
+			<field name="FIDO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+	<rule sequence="2">
+		<when>
+			<field name="NUMERO_INSOLUTI"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="3">
+		<when>
+			<field name="BOLLE_DA_FATTURARE"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="4">
+		<when>
+			<field name="IMPORTO_MAX_FATT"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="5">
+		<when>
+			<field name="NUMERO_AUTORIZZAZIONE"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="6">
+		<when>
+			<field name="DISTANZA_CHILOMETRICA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="7">
+		<when>
+			<field name="IMPORTO_RIMBORSO_KM"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="8">
+		<when>
+			<field name="C_SINCRONIZZ_ES"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="9">
+		<when>
+			<field name="C_CODICE_ES"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="10">
+		<when>
+			<field name="CONSENSO_EMAIL"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+</XFDrules>

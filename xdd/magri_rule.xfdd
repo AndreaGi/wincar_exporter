@@ -1,0 +1,43 @@
+<XFDrules>
+	<rule sequence="1">
+		<when>
+			<field name="MR_PRZLIS"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+	<rule sequence="2">
+		<when>
+			<field name="MR_PRZPREC"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="3">
+		<when>
+			<field name="MR_QTACONF"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="4">
+		<when>
+			<field name="MR_PESO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+</XFDrules>

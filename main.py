@@ -58,7 +58,7 @@ def init():
     print("\tLogon to server...")
 
     try:
-        conn = pyctree.connect(user='ADMIN', password='ADMIN', database='13_08', host='127.0.0.1', port='6597')
+        conn = pyctree.connect(user='ADMIN', password='ADMIN', database='19_10', host='127.0.0.1', port='6597')
         cur = conn.cursor()
 
         mariadb_conn = database.get_mysql_connection()

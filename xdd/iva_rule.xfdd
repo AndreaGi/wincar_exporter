@@ -1,0 +1,76 @@
+<XFDrules>
+	<rule sequence="1">
+		<when>
+			<field name="NR_REGISTRAZIONE"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+	<rule sequence="2">
+		<when>
+			<field name="NR_RIGA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="3">
+		<when>
+			<field name="NR_DOCUMENTO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="4">
+		<when>
+			<field name="NON_DETRAIBILE"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="5">
+		<when>
+			<field name="IMPONIBILE"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="6">
+		<when>
+			<field name="IMPOSTA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="7">
+		<when>
+			<field name="FLAG_BOLLATO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+
+</XFDrules>

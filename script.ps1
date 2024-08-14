@@ -10,7 +10,7 @@ param(
 )
 
 function Import-Tables {
-    $tables = "clfo", "magaz", "stoaut", "com", "comrig", "magpro", "mov"
+    $tables = "clfo", "magaz", "stoaut", "com", "comrig", "magpro", "mov", "magdep"
     foreach ($table in $tables)
     {
         Write-Host "Importing $table"

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="AUTON" minRecLen="543" maxRecLen="543">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="4"/>
+  <part name="NUMERO_PROGRESSIVO" offset="0" size="4"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="6" size="1"/>
+  <segment offset="116" size="20"/>
+  <segment offset="19" size="5"/>
+  <segment offset="24" size="5"/>
+  <part name="FLAG_DISPONIBILITA" offset="6" size="1"/>
+  <part name="CODICE_MODELLO" offset="116" size="20"/>
+  <part name="COLORE_ESTERNO" offset="19" size="5"/>
+  <part name="COLORE_INTERNO" offset="24" size="5"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="116" size="20"/>
+  <segment offset="19" size="5"/>
+  <segment offset="24" size="5"/>
+  <part name="CODICE_MODELLO" offset="116" size="20"/>
+  <part name="COLORE_ESTERNO" offset="19" size="5"/>
+  <part name="COLORE_INTERNO" offset="24" size="5"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="116" size="34"/>
+  <part name="CODICE_MODELLO" offset="116" size="20"/>
+  <part name="TELAIO" offset="136" size="14"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="136" size="14"/>
+  <part name="TELAIO" offset="136" size="14"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="154" size="4"/>
+  <part name="NUMERO_CONTRATTO" offset="154" size="4"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="488" size="9"/>
+  <part name="NR_ORDINE_FABBRICA" offset="488" size="9"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="497" size="9"/>
+  <part name="NR_ORDINE_COMMERCIALE" offset="497" size="9"/>
+ </key>
+ <schema name="AUTON" size="543">
+  <field name="NUMERO_PROGRESSIVO" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="FLAG_VIRTUALE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_CCF" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_DISPONIBILITA" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_MESE_CONFERMA" size="2" type="Alphanum" digits="2" scale="0" dbtype="binary"/>
+  <field name="AN_MARCATEL" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FILLER12" hidden="true" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="AREA_COMMERCIALE" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="RICHIESTA_DA_CUSTODIA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FILLER1" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="COLORE_ESTERNO" indexed="true" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="COLORE_INTERNO" indexed="true" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="FILLER2" size="78" type="Alphanum" digits="78" scale="0"/>
+  <field name="CODICE_ANTIFALSIFICAZIONE" size="9" type="Alphanum" digits="9" scale="0"/>
+  <field name="CODICE_MODELLO" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="TELAIO" indexed="true" size="14" type="Alphanum" digits="14" scale="0"/>
+  <field name="ALLESTIMENTO_SPECIALE" size="4" type="Alphanum" digits="4" scale="0"/>
+  <field name="NUMERO_CONTRATTO" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="DATA_ASSEGNAZIONE" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="DATA_ARRIVO" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="NUMERO_FT_ACQUISTO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="DATA_FT_ACQUISTO" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="DATA_SCAD_PAGAMENTO" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="DATA_PAGAMENTO" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="TOTALE_FT_ACQUISTO" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="SPESE_TRASPORTO" size="4" type="PackedSigned" digits="7" scale="0"/>
+  <field name="ALIQUOTA_IVA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DATA_TRASMISSIONE_ASSEGNATO" size="2" type="Alphanum" digits="2" scale="0" dbtype="binary"/>
+  <field name="DATA_INVIO_CCF" size="2" type="Alphanum" digits="2" scale="0" dbtype="binary"/>
+  <field name="CODICE_AGENTE_JTT60" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DATA_REG_FT_ACQUISTO" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="FLAG_PAGAMENTO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_VALIDAZIONE_CCF" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_RITIRO_CONFORMITA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_STAMPA_DOC_GARANZIA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_CONSEGNA" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="NR_BOLLA_RESO" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="NR_REGISTRO_CARICO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="DATA_REGISTRO_CARICO" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="NR_REGISTRO_SCARICO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="DATA_REGISTRO_SCARICO" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="FILLER225" hidden="true" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="SPESE_ALLESTIMENTO" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="SCONTI_SPECIALI" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="UBICAZIONE_JTT72" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="AN_NOTE2" size="31" type="Alphanum" digits="31" scale="0"/>
+  <field name="CODICE_FORNITORE" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="TIPO_ASSEGNAZIONE_JTTCS" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE_ASSISTENZA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_INIZIO_GARANZIA" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="ALLESTIMENTO_FABBRICA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="NR_ORGANIZZAZIONE" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="ENTE_PROVENIENZA" size="7" type="Alphanum" digits="7" scale="0"/>
+  <field name="FILLER3" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="DATA_RICEZIONE_ORDINE" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="SETTIMANA_CONFERMA" size="2" type="NumUnsigned" digits="2" scale="0"/>
+  <field name="STATO_ORDINE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_SPEDIZIONE" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="PERIODO_PER_MECCANIZZATO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="STATO_BLOCCO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="BOLLO_ROSSO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_PREVISTA_ASSEGNAZIONE" size="2" type="Alphanum" digits="2" scale="0" dbtype="binary"/>
+  <field name="SETTIMANA_PREV_ASSEGNAZIONE" size="2" type="NumUnsigned" digits="2" scale="0"/>
+  <field name="LIVELLO_IMPEGNO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="TIPO_RIFORNIMENTO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_PREVISTA_FATTURAZIONE" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="DATA_MESE_RICHIESTA" size="2" type="Alphanum" digits="2" scale="0" dbtype="binary"/>
+  <field name="SETTIMANA_RICHIESTA" size="2" type="NumUnsigned" digits="2" scale="0"/>
+  <field name="DATA_EMISSIONE_ORDINE" size="2" type="Alphanum" digits="2" scale="0" dbtype="binary"/>
+  <field name="SETTIMANA_EMISSIONE_ORDINE" size="2" type="NumUnsigned" digits="2" scale="0"/>
+  <field name="DATA_MESE_ALLOCAZIONE" size="2" type="Alphanum" digits="2" scale="0" dbtype="binary"/>
+  <field name="SETTIMANA_MESE_ALLOCAZIONE" size="2" type="NumUnsigned" digits="2" scale="0"/>
+  <field name="DATA_PREVISTO_ARRIVO" size="2" type="Alphanum" digits="2" scale="0" dbtype="binary"/>
+  <field name="SETTIMANA_PREVISTO_ARRIVO" size="2" type="NumUnsigned" digits="2" scale="0"/>
+  <field name="DATA_CREAZIONE_VIRTUALE" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="DATA_SCADENZA_PRENOTAZIONE" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="DATA_CONFORMITA" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="NR_MOTORE" size="13" type="Alphanum" digits="13" scale="0"/>
+  <field name="FLAG_COMPLETAMENTO_CCF" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_COMPLETAMENTO_CCF" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="FLAG_INSERIMENTO_VIRTUALE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_INSERIMENTO_VIRTUALE" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="INCENTIVI" size="10" type="Alphanum" digits="10" scale="0"/>
+  <field name="COSTO_CAMPAGNE" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="COSTO_PUBBLICITA" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="AN_IMP_NI" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="FILLER391" hidden="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="STATO_FORD" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DATA_STATO_FORD" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="DATA_AVANZAMENTO_FORD" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="DOGANA_FORD" size="9" type="Alphanum" digits="9" scale="0"/>
+  <field name="NR_CONFORMITA" size="10" type="Alphanum" digits="10" scale="0"/>
+  <field name="BANCA_CONFORMITA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CAUSALE_MOVIMENTI" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DATA_REGISTRAZIONE" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="IMPORTO_VEICOLO_BASE" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="IMPORTO_OPTIONALS" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="SCONTO_VEICOLO_BASE" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="SCONTO_OPTIONALS" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="SCONTO_EXTRA" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="IMPORTO_IVA" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="SIGLA_ESENZIONE_IVA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CODICE_ENTE_CONCESSIONARIO" size="7" type="Alphanum" digits="7" scale="0"/>
+  <field name="NR_REG_CONTABILE" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="AN_FILLER2" size="17" type="Alphanum" digits="17" scale="0"/>
+  <field name="NR_ORDINE_FABBRICA" indexed="true" size="9" type="Alphanum" digits="9" scale="0"/>
+  <field name="NR_ORDINE_COMMERCIALE" indexed="true" size="9" type="Alphanum" digits="9" scale="0"/>
+  <field name="DATA_BOLLA_ARRIVO_BKA" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="NR_BOLLA_ARRIVO_BKA" size="16" type="Alphanum" digits="16" scale="0"/>
+  <field name="VALORE_VEICOLO_CONFORMITA" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="IMPORTO_PAGAMENTO_BKA" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="TIPO_PAGAMENTO_FORNITORE_BKA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TIPO_DOCUMENTO_CONFORMITA_BKA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="ARRIVO_VEICOLO_BKA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="SCAMBIO_VETTURE_BKA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="RITIRO_CONFORMITA_BKA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="IMMATRICOLAZIONE_BKA" size="1" type="Alphanum" digits="1" scale="0"/>
+ </schema>
+</table>

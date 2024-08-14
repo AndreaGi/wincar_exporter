@@ -1,0 +1,209 @@
+<XFDrules>
+	<rule sequence="1">
+		<when>
+			<field name="PROGRESSIVO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+	<rule sequence="2">
+		<when>
+			<field name="S_SINCRONIZZ_ES"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="3">
+		<when>
+			<field name="NR_CONTRATTO_VENDITA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="4">
+		<when>
+			<field name="NR_FT_VENDITA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="5">
+		<when>
+			<field name="VALORE_CONTRATTO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="6">
+		<when>
+			<field name="PERCENTUALE_SCONTO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="7">
+		<when>
+			<field name="VALORE_RITIRO_USATO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="8">
+		<when>
+			<field name="NR_INTERVENTI_OFFICINA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="9">
+		<when>
+			<field name="FILLER9"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="10">
+		<when>
+			<field name="NR_FIGLI"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="11">
+		<when>
+			<field name="KM"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="12">
+		<when>
+			<field name="S_REGNR_CRONO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="13">
+		<when>
+			<field name="S_REGPAG_CRONO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="14">
+		<when>
+			<field name="S_PNEUS_CRONO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="15">
+		<when>
+			<field name="S_W1_CRONO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="16">
+		<when>
+			<field name="S_W_CRONO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="17">
+		<when>
+			<field name="FILLER20"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="18">
+		<when>
+			<field name="S_SAVARENT_KM_P"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="19">
+		<when>
+			<field name="S_SAVARENT_KM_A"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		
+</XFDrules>

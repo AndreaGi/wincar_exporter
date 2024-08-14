@@ -219,22 +219,22 @@ def get_id_auto(telaio, targa, id_cliente):
         return cache_id_auto_telaio[telaio]
     if targa in cache_id_auto_targa:
         return cache_id_auto_targa[targa]
-    if telaio != '':
+    if telaio.strip() != '':
         cursor.execute("SELECT id FROM auto WHERE telaio = %(telaio)s",
                    {'telaio': telaio})
         values = cursor.fetchall()
         if len(values) > 0:
             cache_id_auto_telaio[telaio] = values[0][0]
             return values[0][0]
-    if targa != '':
-        cursor.execute("SELECT id FROM auto WHERE telaio = %(targa)s",
+    if targa.strip() != '':
+        cursor.execute("SELECT id FROM auto WHERE targa = %(targa)s",
                        {'targa': targa})
         values = cursor.fetchall()
         if len(values) > 0:
             cache_id_auto_targa[targa] = values[0][0]
             return values[0][0]
 
-    auto = Auto(id_cliente, 63, telaio, targa, '', 0)
+    auto = Auto(id_cliente, 63, telaio, targa, '', '', 0)
     auto.insert_query(cursor)
     maria_connection.commit()
     return cursor.lastrowid
@@ -248,4 +248,5 @@ def get_unita_misura(unita):
 def clear_codice_articolo(codiceArticolo):
     codice_articolo = codiceArticolo.strip()
     codice_articolo = ' '.join(codice_articolo.split())
+    codice_articolo = str.replace(codice_articolo, ' ', '')
     return codice_articolo

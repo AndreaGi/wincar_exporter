@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="AUTOU" minRecLen="519" maxRecLen="519">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="10"/>
+  <part name="TARGA" offset="0" size="8"/>
+  <part name="PROGRESSIVO" offset="8" size="2"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="10" size="17"/>
+  <part name="MARCA_JTT76" offset="10" size="2"/>
+  <part name="MODELLO_VETTURA" offset="12" size="15"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="27" size="1"/>
+  <segment offset="10" size="17"/>
+  <part name="STATO_AUTO" offset="27" size="1"/>
+  <part name="MARCA_JTT76" offset="10" size="2"/>
+  <part name="MODELLO_VETTURA" offset="12" size="15"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="36" size="4"/>
+  <part name="NR_CONTRATTO_PROVENIENZA" offset="36" size="4"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="65" size="14"/>
+  <part name="NT_TELAIO" offset="65" size="14"/>
+ </key>
+ <schema name="AUTOU" size="519">
+  <field name="TARGA" indexed="true" size="8" type="Alphanum" digits="8" scale="0"/>
+  <field name="PROGRESSIVO" indexed="true" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="MARCA_JTT76" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="MODELLO_VETTURA" indexed="true" size="15" type="Alphanum" digits="15" scale="0"/>
+  <field name="STATO_AUTO" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE_IVA_JTT03" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="NR_CONTRATTO_VENDITA" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="AREA_COMMERCIALE_JET7A" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="NR_CONTRATTO_PROVENIENZA" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="CLIENTE_PROVENIENZA" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="DESCRIZIONE_COLORE" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="NT_TELAIO" indexed="true" size="14" type="Alphanum" digits="14" scale="0"/>
+  <field name="KM_PERCORSI" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="ALIMENTAZIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="TIPO_PROVENIENZA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="TIPO_DISPONIBILITA_JTT82" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DATA_IMMATRICOLAZIONE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="MODELLO_PROVENIENZA" size="15" type="Alphanum" digits="15" scale="0"/>
+  <field name="CLASSE_VEICOLO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CANALE_DESTINAZIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_USCITA_STOCK" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_SCADENZA_BOLLO" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="NR_PROPRIETARI" size="1" type="PackedPositive" digits="1" scale="0"/>
+  <field name="UBICAZIONE_JTT72" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CILINDRATA" size="3" type="PackedPositive" digits="5" scale="0"/>
+  <field name="HP" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="CODICE_CATEGORIA_JTT83" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="VALORE_RITIRO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="DATA_PREVISTO_ARRIVO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_ENTRATA_STOCK" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="COSTI_MECCANICA" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="COSTI_CARROZZERIA" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="COSTI_VARIE_OFFICINA" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="COSTI_VARI" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="RICAVI" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="PREZZO_VENDITA_PRESUNTO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="REGISTRO_CARICO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="REGISTRO_SCARICO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="CARICO_DEPOSITO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="SCARICO_DEPOSITO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="FILLER183" hidden="true" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="DATA_REG_CARICO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_REG_SCARICO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_CARICO_DEPOSITO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_SCARICO_DEPOSITO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_DOC_RITIRO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="INTESTATARIO" size="25" type="Alphanum" digits="25" scale="0"/>
+  <field name="INDIRIZZO" size="25" type="Alphanum" digits="25" scale="0"/>
+  <field name="CITTA" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="NOTE" size="25" type="Alphanum" digits="25" scale="0"/>
+  <field name="NOTAIO_VENDITA_JTT74" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DATA_REPERTORIO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="TARIFFA_ACI" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="NOTAIO_RITIRO_JTT74" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="PORTATA" size="3" type="PackedPositive" digits="5" scale="2"/>
+  <field name="REPERTORIO" size="9" type="Alphanum" digits="9" scale="0"/>
+  <field name="CATEGORIA_ACI_JTT6B" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="AGENTE_JTT60" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DATA_RIENTRO_AFFIDAMENTO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="MARCA_VIN" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="MODELLO_VIN" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="CATALIZZATORE_RITIRO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CATALIZZATORE_VENDITA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="TIPO_RITIRO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CANALE_PROVENIENZA_JTT89" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="GARANZIA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_ENTRATA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_USCITA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="NR_INTERVENTI" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="PUNTO_VENDITA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CODICE_MODELLO_ISOFIAT" size="7" type="Alphanum" digits="7" scale="0"/>
+  <field name="CODICE_COLORE_ISOFIAT" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_OPZIONALI_1" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_OPZIONALI_2" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_OPZIONALI_3" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_OPZIONALI_4" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_OPZIONALI_5" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_OPZIONALI_6" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_OPZIONALI_7" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_OPZIONALI_8" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_OPZIONALI_9" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_OPZIONALI_10" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_ULT_INTERVENTO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FLAG_REVISIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FUTURA_REVISIONE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FLAG_FINANZIAMENTO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_AUTOEXPERT" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_CARTA_CIRCOLAZIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_FOGLIO_COMPLEMENTARE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_SCADENZA_PRENOTAZIONE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="INCENTIVI" size="10" type="Alphanum" digits="10" scale="0"/>
+  <field name="VALORE_CONTRATTO_RITIRO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="VALORE_EUROTAX" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="VALORE_QUATTRO_RUOTE" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="PREVENTIVO_MECCANICA" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="PREVENTIVO_CARROZZERIA" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="PREVENTIVO_ALTRI" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="DATA_MATURAZIONE_GARANZIA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="PREVENTIVO_ELETTRAUTO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="PREVENTIVO_GOMMISTA" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="CONSUNTIVO_ELETTRAUTO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="CONSUNTIVO_GOMMISTA" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="COSTI_GARANZIA" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="COSTI_ALLESTIMENTO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="COSTI_PUBBLICITA" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="STAO_USO_MECCANICA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="STAO_USO_CARROZZERIA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="STAO_USO_ELETTRAUTO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="STAO_USO_GOMMISTA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="STAO_USO_ALTRI" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_INVIO_MOV_ENTRATA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_INVIO_MOV_USCITA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FLAG_RISPOSTA_ENTRATA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_RISPOSTA_USCITA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="AGENTE_PROVENIENZA_JTT60" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FLAG_REGISTRO_ROTTAMAZIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_INIZIO_SOSP_BOLLI" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_FINE_SOSP_BOLLI" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="NR_DOCUMENTO_RITIRO" size="9" type="Alphanum" digits="9" scale="0"/>
+  <field name="FILLER509" hidden="true" size="10" type="Alphanum" digits="10" scale="0"/>
+ </schema>
+</table>

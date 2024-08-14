@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="COMRIG" minRecLen="339" maxRecLen="339">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="13"/>
+  <part name="STATO" offset="0" size="1"/>
+  <part name="NUMERATORE" offset="1" size="2"/>
+  <part name="NR_COMMESSA" offset="3" size="4"/>
+  <part name="NR_INCONVENIENTE" offset="7" size="2"/>
+  <part name="TIPO_RIGA_JTT27" offset="9" size="2"/>
+  <part name="NR_RIGA" offset="11" size="2"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="0" size="1"/>
+  <segment offset="141" size="20"/>
+  <part name="STATO" offset="0" size="1"/>
+  <part name="CODICE_ARTICOLO" offset="141" size="20"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="228" size="3"/>
+  <segment offset="0" size="13"/>
+  <part name="DATA_CHIUSURA_RIGA" offset="228" size="3"/>
+  <part name="STATO" offset="0" size="1"/>
+  <part name="NUMERATORE" offset="1" size="2"/>
+  <part name="NR_COMMESSA" offset="3" size="4"/>
+  <part name="NR_INCONVENIENTE" offset="7" size="2"/>
+  <part name="TIPO_RIGA_JTT27" offset="9" size="2"/>
+  <part name="NR_RIGA" offset="11" size="2"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="250" size="10"/>
+  <part name="CM_MM_AAMM" offset="250" size="2"/>
+  <part name="CM_MM_FILLER1" offset="252" size="1"/>
+  <part name="CM_MM_NUM" offset="253" size="4"/>
+  <part name="CM_MM_RIGA" offset="257" size="2"/>
+  <part name="CM_MM_RIG1" offset="259" size="1"/>
+ </key>
+ <schema name="COMRIG" size="339">
+  <field name="STATO" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="NUMERATORE" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="NR_COMMESSA" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="NR_INCONVENIENTE" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TIPO_RIGA_JTT27" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="NR_RIGA" indexed="true" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="CM_SPESA1" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CM_SPESA2" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DURATA_GG_SPESA" size="6" type="NumUnsigned" digits="6" scale="0"/>
+  <field name="ATTIVAZIONE_GG_SPESA" size="6" type="NumUnsigned" digits="6" scale="0"/>
+  <field name="CODICE_DIFETTO_1" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="POSIZIONE_1" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_DIFETTO_2" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="POSIZIONE_2" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_DIFETTO_3" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="POSIZIONE_3" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_DIFETTO_4" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="POSIZIONE_4" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_DIFETTO_5" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="POSIZIONE_5" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_DIFETTO_6" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="POSIZIONE_6" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_DIFETTO_7" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="POSIZIONE_7" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_DIFETTO_8" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="POSIZIONE_8" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_DIFETTO_9" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="POSIZIONE_9" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_DIFETTO_10" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="POSIZIONE_10" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="NR_CAMPAGNA" size="3" type="PackedPositive" digits="4" scale="0"/>
+  <field name="LETTERA_CAMPAGNA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="MODELLO_CAMPAGNA" size="7" type="Alphanum" digits="7" scale="0"/>
+  <field name="OPERAZIONE_CAMPAGNA" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="MATERIALE_CAMPAGNA" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="SCONTO_RICAMBIO" size="4" type="NumUnsigned" digits="4" scale="2"/>
+  <field name="NR_FATT_ACQUISTO" size="15" type="Alphanum" digits="15" scale="0"/>
+  <field name="TIPO_ORDINE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_INSTALLAZIONE_PRECEDENTE" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="KM_PERCORRENZA_PRECEDENZA" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="NR_CONTRATTO_TESSERA" size="10" type="Alphanum" digits="10" scale="0"/>
+  <field name="DATA_SCADENZA_CONTRATTO" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="KM_ASSISTITI" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="TIPO_GARANZIA_IVECO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE_FORNITORE_RENAULT" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="NR_AUTORIZZAZIONE_PREVENTIVA" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="REVISIONE_SOSTITUZIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FERMO_VEICOLO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DEMERITO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="MERCATO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_ARTICOLO" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="DESCRIZIONE" size="36" type="Alphanum" digits="36" scale="0"/>
+  <field name="UM" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="QTA" size="4" type="PackedSigned" digits="7" scale="2"/>
+  <field name="PREZZO" size="5" type="PackedSigned" digits="9" scale="1"/>
+  <field name="SCONTO1" size="2" type="PackedSigned" digits="3" scale="1"/>
+  <field name="SCONTO2" size="2" type="PackedSigned" digits="3" scale="1"/>
+  <field name="SCONTO3" size="2" type="PackedSigned" digits="3" scale="1"/>
+  <field name="CODICE_IVA_JTT03" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FLAG_OFFICINA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="TIPO_ADDEBITO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_TIPO_RIGA" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="CONTO_RICAVO" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="CATEGORIA_MERC_JET07" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_CHIUSURA_RIGA" indexed="true" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="REPARTO_JTT28" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CLASSE_SCONTO_JTT21" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="GRUPPO_PARTI_AUTO_JTT29" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="NR_FT_LAVORI_TERZI" size="6" type="PackedPositive" digits="11" scale="0"/>
+  <field name="TEMPO_TEMPARIO" size="4" type="PackedPositive" digits="7" scale="2"/>
+  <field name="FLAG_RIGA_CONTABILIZZATA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="GRUPPO_IVECO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CM_MM_AAMM" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CM_MM_FILLER1" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CM_MM_NUM" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="CM_MM_RIGA" indexed="true" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="CM_MM_RIG1" indexed="true" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="FILLER260" hidden="true" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="PREZZO_LISTINO" size="5" type="PackedPositive" digits="9" scale="1"/>
+  <field name="ORA_REGISTRAZIONE" size="3" type="PackedPositive" digits="4" scale="2"/>
+  <field name="DATA_REGISTRAZIONE" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="ARTICOLO_DIFETTOSO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FILLER2" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="FILLER3" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="CM_COD_TARIFFA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FILLER285" hidden="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE_RICONOSCIMENTO" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CODICE_MOTIVAZIONE" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CODICE_ISTRUZIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE_EVASIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="ORE_LAVORATE" size="4" type="PackedPositive" digits="7" scale="2"/>
+  <field name="CODICE_FUNZIONALE_BREVE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_ACQ_LOCALI" size="10" type="Alphanum" digits="10" scale="0"/>
+  <field name="SOTTOTIPO_ADDEBITO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="SCONTO1_ORIGINALE" size="2" type="PackedSigned" digits="3" scale="1"/>
+  <field name="SCONTO2_ORIGINALE" size="2" type="PackedSigned" digits="3" scale="1"/>
+  <field name="SCONTO3_ORIGINALE" size="2" type="PackedSigned" digits="3" scale="1"/>
+  <field name="DEPOSITO" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CONTO_DI_SCONTO" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="CM_SZ_NRORD" size="12" type="Alphanum" digits="12" scale="0"/>
+  <field name="FILLER336" hidden="true" size="3" type="Alphanum" digits="3" scale="0"/>
+ </schema>
+</table>

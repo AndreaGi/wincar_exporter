@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="CLFO" minRecLen="908" maxRecLen="908">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="6"/>
+  <part name="C_CF" offset="0" size="1"/>
+  <part name="CODICE" offset="1" size="5"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="0" size="1"/>
+  <segment offset="11" size="30"/>
+  <segment offset="1" size="5"/>
+  <part name="C_CF" offset="0" size="1"/>
+  <part name="RAGIONE_SOCIALE" offset="11" size="30"/>
+  <part name="CODICE" offset="1" size="5"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="0" size="1"/>
+  <segment offset="134" size="20"/>
+  <segment offset="1" size="5"/>
+  <part name="C_CF" offset="0" size="1"/>
+  <part name="NOME_CONVENZIONALE" offset="134" size="20"/>
+  <part name="CODICE" offset="1" size="5"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="0" size="1"/>
+  <segment offset="269" size="11"/>
+  <part name="C_CF" offset="0" size="1"/>
+  <part name="PARTITA_IVA" offset="269" size="11"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="0" size="1"/>
+  <segment offset="253" size="16"/>
+  <part name="C_CF" offset="0" size="1"/>
+  <part name="CODICE_FISCALE" offset="253" size="16"/>
+ </key>
+ <schema name="CLFO" size="908">
+  <field name="C_CF" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE" indexed="true" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="CODICE_CLIENTE_CAPOGRUPPO" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="RAGIONE_SOCIALE" indexed="true" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="RAGIONE_SOCIALE2" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="INDIRIZZO" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="CAP" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="CITTA" size="23" type="Alphanum" digits="23" scale="0"/>
+  <field name="PROVINCIA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CODICE_COMUNE_ACI" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="NOME_CONVENZIONALE" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="SESSO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CITTA_NASCITA" size="23" type="Alphanum" digits="23" scale="0"/>
+  <field name="PROVINCIA_NASCITA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DATA_NASCITA" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="TIPO_SOCIETA" size="4" type="Alphanum" digits="4" scale="0"/>
+  <field name="DOCUMENTO_IDENTITA" size="28" type="Alphanum" digits="28" scale="0"/>
+  <field name="FILLER215" hidden="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TELEFONO" size="12" type="Alphanum" digits="12" scale="0"/>
+  <field name="TELEX" size="12" type="Alphanum" digits="12" scale="0"/>
+  <field name="FAX" size="12" type="Alphanum" digits="12" scale="0"/>
+  <field name="CODICE_FISCALE" indexed="true" size="16" type="Alphanum" digits="16" scale="0"/>
+  <field name="PARTITA_IVA" indexed="true" size="11" type="Alphanum" digits="11" scale="0"/>
+  <field name="NAZIONE_CLIENTE_JTET7H" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="PROFESSIONE_JTT64" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="GRUPPO_FATTURAZIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="BOLLE_SINGOLE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_CLIENTE_CRITICO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="PAGAMENTO_FISSO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CATEGORIA_JTT06" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="AGENTE_JTT60" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="ZONA_JTT50" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="SCONTO" size="2" type="PackedPositive" digits="3" scale="1"/>
+  <field name="TIPO_PAGAMENTO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="SCADENZA_PAGAMENTO_JTT01" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FIDO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="FILLER305" hidden="true" size="12" type="Alphanum" digits="12" scale="0"/>
+  <field name="NUMERO_INSOLUTI" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="BOLLE_DA_FATTURARE" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="IMPORTO_MAX_FATT" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="DATA_ANZIANITA" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="CODICE_IVA_JTT03" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="SPEDIZIONE_JTT08" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CODICE_VETTORE_JTT18" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="BANCA_APPOGGIO" size="26" type="Alphanum" digits="26" scale="0"/>
+  <field name="CODICE_ABI" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="CODICE_CAB" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="CODICE_BANCA_JTT05" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FLAG_BANCA_PREFERENZIALE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CONTO_CORRENTE" size="14" type="Alphanum" digits="14" scale="0"/>
+  <field name="RAGIONE_SOCIALE_DESTINATARIO" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="INDIRIZZO_DESTINATARIO" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="CAP_DESTINATARIO" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="CITTA_DESTINATARIO" size="23" type="Alphanum" digits="23" scale="0"/>
+  <field name="PROVINCIA_DESTINATARIO" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CODICE_ACI_DESTINATARIO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="RAGIONE_SOCIALE_FATTURAZIONE" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="INDIRIZZO_FATTURAZIONE" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="CAP_FATTURAZIONE" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="CITTA_FATTURAZIONE" size="23" type="Alphanum" digits="23" scale="0"/>
+  <field name="PROVINCIA_FATTURAZIONE" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="NOTE" size="70" type="Alphanum" digits="70" scale="0"/>
+  <field name="EMAIL" size="55" type="Alphanum" digits="55" scale="0"/>
+  <field name="URL" size="45" type="Alphanum" digits="45" scale="0"/>
+  <field name="ESTREMI_DICHIARAZIONE" size="25" type="Alphanum" digits="25" scale="0"/>
+  <field name="PRIVACY" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_AUTORIZZAZIONE" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="NUMERO_AUTORIZZAZIONE" size="5" type="PackedPositive" digits="8" scale="0"/>
+  <field name="CODICE_TARIFFA_JTT26" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DISTANZA_CHILOMETRICA" size="3" type="PackedPositive" digits="5" scale="0"/>
+  <field name="TIPO_RIMBORSO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="IMPORTO_RIMBORSO_KM" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="CATEGORIA_CONTABILE_BAAN" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_ENTE" size="7" type="Alphanum" digits="7" scale="0"/>
+  <field name="CANALE_VENDITA_SIR" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FILLER801" hidden="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="C_MARCHIO_1" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="C_MARCHIO_2" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="C_MARCHIO_3" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FILLER808" hidden="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="C_CODCIN_NAZ" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="C_CREATION_DATE" size="3" type="Alphanum" digits="3" scale="0" dbtype="binary"/>
+  <field name="C_CREATION_TIME" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="C_SINCRONIZZ_ES" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="C_CODICE_ES" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="C_PERSONA_FISICA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="C_TIPO_SCONTO" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="C_TIPO_URGENZA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="C_TIPO_LISTINO" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="C_COD_ENTE_1" size="7" type="Alphanum" digits="7" scale="0"/>
+  <field name="C_COD_ENTE_2" size="7" type="Alphanum" digits="7" scale="0"/>
+  <field name="C_COD_ENTE_3" size="7" type="Alphanum" digits="7" scale="0"/>
+  <field name="C_IBAN_PAESE" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="C_IBAN_CTRL" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="C_CANALE_PRIM" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="C_SOTTO_CANALE_PRIM" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CONSENSO_EMAIL" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="TIPO_DICHIARAZIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FILLER865" hidden="true" size="43" type="Alphanum" digits="43" scale="0"/>
+ </schema>
+</table>

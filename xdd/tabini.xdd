@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="TABINI" minRecLen="210" maxRecLen="210">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="41"/>
+  <part name="TI_TIPO" offset="0" size="1"/>
+  <part name="TI_CODICE" offset="1" size="2"/>
+  <part name="TI_ELEMENTO" offset="3" size="38"/>
+ </key>
+ <schema name="TABINI" size="210">
+  <field name="TI_TIPO" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="TI_CODICE" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TI_ELEMENTO" indexed="true" size="38" type="Alphanum" digits="38" scale="0"/>
+  <field name="TI_DESC1" size="169" type="Alphanum" digits="169" scale="0"/>
+ </schema>
+</table>

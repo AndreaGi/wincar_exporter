@@ -172,6 +172,8 @@ def convert_date(byte):
             year = 2022
         case 195:
             year = 2023
+        case 196:
+            year = 2024
 
     month = 0
     match byte[1]:

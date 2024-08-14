@@ -1,0 +1,308 @@
+<XFDrules>
+	<rule sequence="1">
+		<when>
+			<field name="NUMERO_PROGRESSIVO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+	<rule sequence="2">
+		<when>
+			<field name="NUMERO_CONTRATTO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="3">
+		<when>
+			<field name="NUMERO_FT_ACQUISTO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="4">
+		<when>
+			<field name="TOTALE_FT_ACQUISTO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="5">
+		<when>
+			<field name="SPESE_TRASPORTO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="6">
+		<when>
+			<field name="NR_BOLLA_RESO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="7">
+		<when>
+			<field name="NR_REGISTRO_CARICO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="8">
+		<when>
+			<field name="NR_REGISTRO_SCARICO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="9">
+		<when>
+			<field name="SPESE_ALLESTIMENTO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="10">
+		<when>
+			<field name="SCONTI_SPECIALI"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="11">
+		<when>
+			<field name="NR_ORGANIZZAZIONE"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="12">
+		<when>
+			<field name="SETTIMANA_CONFERMA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="13">
+		<when>
+			<field name="SETTIMANA_PREV_ASSEGNAZIONE"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="14">
+		<when>
+			<field name="SETTIMANA_RICHIESTA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="15">
+		<when>
+			<field name="SETTIMANA_EMISSIONE_ORDINE"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="16">
+		<when>
+			<field name="SETTIMANA_MESE_ALLOCAZIONE"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="17">
+		<when>
+			<field name="SETTIMANA_PREVISTO_ARRIVO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="18">
+		<when>
+			<field name="COSTO_CAMPAGNE"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="19">
+		<when>
+			<field name="COSTO_PUBBLICITA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="20">
+		<when>
+			<field name="AN_IMP_NI"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="21">
+		<when>
+			<field name="IMPORTO_VEICOLO_BASE"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="22">
+		<when>
+			<field name="IMPORTO_OPTIONALS"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="23">
+		<when>
+			<field name="SCONTO_VEICOLO_BASE"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="24">
+		<when>
+			<field name="SCONTO_OPTIONALS"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="25">
+		<when>
+			<field name="SCONTO_EXTRA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		<rule sequence="26">
+		<when>
+			<field name="IMPORTO_IVA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+		<rule sequence="27">
+		<when>
+			<field name="VALORE_VEICOLO_CONFORMITA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		
+		
+		<rule sequence="28">
+		<when>
+			<field name="IMPORTO_PAGAMENTO_BKA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+		
+</XFDrules>

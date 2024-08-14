@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="DOCAUT" minRecLen="65" maxRecLen="65">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="11"/>
+  <part name="DAU_DTDOC" offset="0" size="3"/>
+  <part name="DAU_NUMER" offset="3" size="2"/>
+  <part name="DAU_NRDOC" offset="5" size="4"/>
+  <part name="DAU_RIGA" offset="9" size="2"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="14" size="16"/>
+  <segment offset="0" size="3"/>
+  <segment offset="11" size="3"/>
+  <part name="DAU_NU" offset="14" size="1"/>
+  <part name="DAU_TARGA" offset="15" size="8"/>
+  <part name="DAU_NRPROGR" offset="23" size="7"/>
+  <part name="DAU_DTDOC" offset="0" size="3"/>
+  <part name="DAU_ORA" offset="11" size="3"/>
+ </key>
+ <schema name="DOCAUT" size="65">
+  <field name="DAU_DTDOC" indexed="true" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DAU_NUMER" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DAU_NRDOC" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="DAU_RIGA" indexed="true" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="DAU_ORA" indexed="true" size="3" type="PackedPositive" digits="4" scale="2"/>
+  <field name="DAU_NU" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DAU_TARGA" indexed="true" size="8" type="Alphanum" digits="8" scale="0"/>
+  <field name="DAU_NRPROGR" indexed="true" size="7" type="NumUnsigned" digits="7" scale="0"/>
+  <field name="DAU_UBIC_PROVEN" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DAU_REGSCAR" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="DAU_UBIC_DESTIN" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DAU_REGCAR" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="DAU_TIPODOC" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DAU_STORNO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DAU_CODCLI_A" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="FILLER51" hidden="true" size="14" type="Alphanum" digits="14" scale="0"/>
+ </schema>
+</table>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="IVA" minRecLen="48" maxRecLen="48">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="15"/>
+  <part name="NR_REGISTRO" offset="0" size="1"/>
+  <part name="DATA_REGISTRAZIONE" offset="1" size="3"/>
+  <part name="NR_FATTURA" offset="4" size="6"/>
+  <part name="NR_REGISTRAZIONE" offset="10" size="4"/>
+  <part name="NR_RIGA" offset="14" size="1"/>
+ </key>
+ <schema name="IVA" size="48">
+  <field name="NR_REGISTRO" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_REGISTRAZIONE" indexed="true" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="NR_FATTURA" indexed="true" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="NR_REGISTRAZIONE" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="NR_RIGA" indexed="true" size="1" type="PackedPositive" digits="1" scale="0"/>
+  <field name="CODICE_ANAGRAFICO" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="DATA_DOCUMENTO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="NR_DOCUMENTO" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="CAUSALE_REG_JTT52" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CODICE_IVA_JTT03" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="ALIQUOTA_IVA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="NON_DETRAIBILE" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="IMPONIBILE" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="IMPOSTA" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="FLAG_BOLLATO" size="1" type="NumUnsigned" digits="1" scale="0"/>
+ </schema>
+</table>

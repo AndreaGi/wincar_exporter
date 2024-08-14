@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="COM" minRecLen="450" maxRecLen="450">
+ <key duplicate="false" primary="true">
+  <segment offset="14" size="6"/>
+  <part name="NUMERATORE" offset="14" size="2"/>
+  <part name="COMMESSA" offset="16" size="4"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="0" size="20"/>
+  <part name="TELAIO" offset="0" size="14"/>
+  <part name="NUMERATORE" offset="14" size="2"/>
+  <part name="COMMESSA" offset="16" size="4"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="20" size="14"/>
+  <part name="TARGA" offset="20" size="8"/>
+  <part name="FILLER1" offset="28" size="2"/>
+  <part name="FILLER2" offset="30" size="4"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="71" size="5"/>
+  <part name="CLIENTE" offset="71" size="5"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="333" size="4"/>
+  <segment offset="14" size="6"/>
+  <part name="NR_PROGR_STORICO" offset="333" size="4"/>
+  <part name="NUMERATORE" offset="14" size="2"/>
+  <part name="COMMESSA" offset="16" size="4"/>
+ </key>
+ <schema name="COM" size="450">
+  <field name="TELAIO" indexed="true" size="14" type="Alphanum" digits="14" scale="0"/>
+  <field name="NUMERATORE" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="COMMESSA" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="TARGA" indexed="true" size="8" type="Alphanum" digits="8" scale="0"/>
+  <field name="FILLER1" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FILLER2" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="ENTE_RIPARATORE" size="7" type="Alphanum" digits="7" scale="0"/>
+  <field name="DESCRIZIONE_ENTE" size="18" type="Alphanum" digits="18" scale="0"/>
+  <field name="NR_SEGNALAZIONE" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="NUMERO_COMMESSA_OOAA" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="TIPO_COMMESSA_JTT2B" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FLAG" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="TIPO_INTERVENTO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CLIENTE" indexed="true" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="CATEGORIA_JTT06" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TIPO_PAGAMENTO_JTT02" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="SCADENZA_JTT01" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="SCONTO" size="2" type="PackedPositive" digits="3" scale="1"/>
+  <field name="KM" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="DATA_CONSEGNA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_PREVENTIVO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="NUMERATORE_PREVENTIVO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="NR_PREVENTIVO" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="DATA_COMMESSA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_CHIUSURA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="NR_DOCUMENTO" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="DATA_DOCUMENTO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FLAG_STORICIZZAZIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_REGISTRO_VEIC_RIPARAZIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_MICROMARKETING" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_POINT" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_SCADENZA_PREVENTIVO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="TIPO_TEMPARIO_JTT28" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CODICE_MESSAGGIO" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="DESCRIZIONE_MESSAGGIO" size="80" type="Alphanum" digits="80" scale="0"/>
+  <field name="TIPO_CARROZZERIA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DATA_DELIBERA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="NR_GARANZIA" size="10" type="Alphanum" digits="10" scale="0"/>
+  <field name="NR_CONTRATTO_IVECO" size="6" type="NumUnsigned" digits="6" scale="0"/>
+  <field name="NAZIONE" size="10" type="Alphanum" digits="10" scale="0"/>
+  <field name="ATTIVITA" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="FILLER3" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_DELIBERA_AP" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_COMMESSA_APERTA_AP" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE_FILIALE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="O_NRFAT_CM" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="O_DTFAT_CM" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="O_CLIENTE_CM" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="O_CLIENTE_FATTURA" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="FILLER260" hidden="true" size="63" type="Alphanum" digits="63" scale="0"/>
+  <field name="PUNTEGGIO" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="NUMERO_PRISMA" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="SEDE_OFFICINA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FILLER4" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="ORA_INGRESSO_GARANZIA" size="3" type="PackedPositive" digits="4" scale="2"/>
+  <field name="FLAG_RICEVUTA_FISCALE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="NR_PROGR_STORICO" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="ATTRIBUTO" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="IMPORTO_PAGATO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="NR_ULTIMO_PAGAMENTO" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="DATA_ULTIMO_PAGAMENTO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="O_CODMERC_FATT" size="4" type="Alphanum" digits="4" scale="0"/>
+  <field name="O_CODSOC_FATT" size="2" type="PackedPositive" digits="2" scale="0"/>
+  <field name="O_CODCONC_FATT" size="5" type="PackedPositive" digits="8" scale="0"/>
+  <field name="O_CODMERC_CONTR" size="2" type="PackedPositive" digits="2" scale="0"/>
+  <field name="O_CODCONC_CONTR" size="5" type="PackedPositive" digits="8" scale="0"/>
+  <field name="O_CODSOC_MANRIP" size="2" type="PackedPositive" digits="2" scale="0"/>
+  <field name="O_CODCLI_MANRIP" size="5" type="PackedPositive" digits="8" scale="0"/>
+  <field name="O_RAGSOC_MANRIP" size="25" type="Alphanum" digits="25" scale="0"/>
+  <field name="O_DTINI_CONTRMR" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="O_DTFIN_CONTRMR" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="O_KM_TAGLIANDO" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="O_CATEG_QUOTA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="O_FIRMA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="O_TIPO_CLI" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="TIPO_DOCUMENTO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="AREA_COMMERCIALE" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="O_CREATION_DATE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="O_CREATION_TIME" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="O_SINCRONIZZ_ES" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="O_NRCOM1_ES" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="O_STATO_ES" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="O_ACCETTATORE" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="O_TB_T9ADESCR" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FILLER442" hidden="true" size="8" type="Alphanum" digits="8" scale="0"/>
+ </schema>
+</table>

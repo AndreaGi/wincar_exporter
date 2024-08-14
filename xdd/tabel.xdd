@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="TABELL" minRecLen="50" maxRecLen="50">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="5"/>
+  <part name="TIPO" offset="0" size="1"/>
+  <part name="CODICE" offset="1" size="2"/>
+  <part name="ELEMENTO" offset="3" size="2"/>
+ </key>
+ <schema name="TABELL" size="50">
+  <field name="TIPO" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="ELEMENTO" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DESCRIZIONE" size="25" type="Alphanum" digits="25" scale="0"/>
+  <field name="RESTO" size="20" type="Alphanum" digits="20" scale="0"/>
+ </schema>
+</table>

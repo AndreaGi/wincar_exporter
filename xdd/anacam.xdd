@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="ANACAM" minRecLen="100" maxRecLen="100">
+ <key duplicate="false" primary="true">
+  <segment offset="3" size="11"/>
+  <part name="ACQUISTO_VENDITA" offset="3" size="1"/>
+  <part name="CODICE" offset="4" size="10"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="0" size="14"/>
+  <part name="DATA_FINE" offset="0" size="3"/>
+  <part name="ACQUISTO_VENDITA" offset="3" size="1"/>
+  <part name="CODICE" offset="4" size="10"/>
+ </key>
+ <schema name="ANACAM" size="100">
+  <field name="DATA_FINE" indexed="true" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="ACQUISTO_VENDITA" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE" indexed="true" size="10" type="Alphanum" digits="10" scale="0"/>
+  <field name="CAMPAGNA_BUDGET" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="LIVELLO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DESCRIZIONE" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="SUDDIVISIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_INIZIO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="PRECODICE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="SOSTITUZIONE_CASCATA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_INIZIO_PROMOZINE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_FINE_PROMOZIONE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="TIPO_MOVIMENTO_1" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TIPO_MOVIMENTO_2" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TIPO_MOVIMENTO_3" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TIPO_MOVIMENTO_4" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TIPO_MOVIMENTO_5" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TIPO_MOVIMENTO_6" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TIPO_MOVIMENTO_7" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TIPO_MOVIMENTO_8" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TIPO_MOVIMENTO_9" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TIPO_MOVIMENTO_10" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TIPO_OBBIETTIVO_LIRE_QTA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="OBBIETTIVO_TOTALE" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="TIPO_SCONTO_LIRE_QTA_PERC" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="SCONTO_CONCESSO" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="ANC_FILLER" size="6" type="Alphanum" digits="6" scale="0"/>
+ </schema>
+</table>

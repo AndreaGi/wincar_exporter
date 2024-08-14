@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="MODAUT" minRecLen="292" maxRecLen="292">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="20"/>
+  <part name="CODICE_MODELLO" offset="0" size="20"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="222" size="20"/>
+  <part name="MODELLO_CASA" offset="222" size="20"/>
+ </key>
+ <schema name="MODAUT" size="292">
+  <field name="CODICE_MODELLO" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="CODICE_MARCA_JTT76" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DESCRIZIONE_MODELLO" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="SEGMENTO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE_IVA_JTT03" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CLASSE_SCONTO_JTT77" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="TIPO_VETTURA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="MESSA_IN_STRADA" size="4" type="PackedSigned" digits="7" scale="0"/>
+  <field name="MESSA_IN_STRADA_NI" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="FAMIGLIA_BUDGET" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE_PROMOZIONE_JTT80" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="NOTE" size="12" type="Alphanum" digits="12" scale="0"/>
+  <field name="NR_OMOLOGAZIONE" size="13" type="Alphanum" digits="13" scale="0"/>
+  <field name="ALIMENTAZIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CILINDRATA" size="3" type="PackedPositive" digits="5" scale="0"/>
+  <field name="SPESE_TRASPORTO" size="4" type="PackedSigned" digits="7" scale="0"/>
+  <field name="NR_TELAIO" size="9" type="Alphanum" digits="9" scale="0"/>
+  <field name="POTENZA_FISCALE" size="3" type="PackedPositive" digits="5" scale="2"/>
+  <field name="COD_DURATA_GARANZIA_JTT66" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="GRUPPO_MOD_TEMPARIO_JTT30" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FILLER118" hidden="true" size="18" type="Alphanum" digits="18" scale="0"/>
+  <field name="MODELLO_FABBRICA" size="8" type="Alphanum" digits="8" scale="0"/>
+  <field name="CODICE_FORNITORE" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="FAMIGLIA_PROGRAMMAZIONE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="SALDO_COMMESSA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="LINEA_CAP" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="TIPO_CARROZZERIA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="NR_POSTI" size="2" type="PackedPositive" digits="2" scale="0"/>
+  <field name="MODEL_YEAR" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="SPESE_IMMATRICOLAZIONE" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="COSTO_CAMPAGNE" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="COSTO_PUBBLICITA" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="COSTO_GESTIONE" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="DATA_INIZIO_ORDINABILITA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_FINE_ORDINABILITA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FLAG_ORDINI_LIBERI" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="LISTINO_VENDITA_1" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="LISTINO_ACQUISTO_1" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="DATA_ENTRATA_VIGORE_1" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="LISTINO_VENDITA_2" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="LISTINO_ACQUISTO_2" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="DATA_ENTRATA_VIGORE_2" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="LISTINO_VENDITA_3" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="LISTINO_ACQUISTO_3" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="DATA_ENTRATA_VIGORE_3" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="MODELLO_CASA" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="COSTO_PERC_PUBBLICITA" size="3" type="PackedPositive" digits="4" scale="2"/>
+  <field name="DATA_FINE_ASSISTENZA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="BM2000_FORD" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CTR_TENSIONE_BATTERIA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FILLER2" size="40" type="Alphanum" digits="40" scale="0"/>
+ </schema>
+</table>

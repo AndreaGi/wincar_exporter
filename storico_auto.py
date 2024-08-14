@@ -2,6 +2,8 @@ import pyctree
 import mariadb
 import time
 
+from date_parser import convert_date
+
 
 def commit(maria_connection):
     maria_connection.commit()
@@ -23,6 +25,7 @@ def export(treeCur, mariaCur, conn):
             "admin.stoaut.telaio, "
             "admin.stoaut.codice_marca_jtt76, "
             "admin.stoaut.descrizione_modello, "
+            "admin.stoaut.data_immatricolazione, "
             "admin.stoaut.targa, "
             "admin.stoaut.nr_interventi_officina "
             "FROM admin.stoaut "
@@ -51,13 +54,13 @@ def export_row(rows, mariaCur):
         id_marca = get_id_marca(row[2])
 
         if id_cliente != 0:
-            storico_auto = Auto(id_cliente, id_marca, row[1], row[4], row[3], row[5])
+            storico_auto = Auto(id_cliente, id_marca, row[1], row[5], row[3], row[4], row[6])
             storico_auto.insert_query(mariaCur)
 
 
 class Auto:
 
-    def __init__(self, id_cliente, id_marca, telaio, targa, modello, nr_interventi):
+    def __init__(self, id_cliente, id_marca, telaio, targa, modello, immatricolazione, nr_interventi):
 
         self.data = {
             'id_cliente': id_cliente,
@@ -65,14 +68,15 @@ class Auto:
             'telaio': telaio.strip(),
             'targa': targa.strip(),
             'modello': modello.strip(),
+            'immatricolazione': convert_date(immatricolazione),
             'nr_interventi': nr_interventi,
         }
 
     def build_sql(self):
         return "INSERT INTO auto (id_cliente, id_marca, telaio, targa, " \
-               "modello, nr_interventi) " \
+               "modello, data_immatricolazione, nr_interventi) " \
                "VALUES (%(id_cliente)s, %(id_marca)s, %(telaio)s, %(targa)s, " \
-               "%(modello)s, %(nr_interventi)s)"
+               "%(modello)s, %(immatricolazione)s, %(nr_interventi)s)"
 
     def insert_query(self, cur):
         query = self.build_sql()

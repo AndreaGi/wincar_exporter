@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="TABSIG" minRecLen="152" maxRecLen="152">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="41"/>
+  <part name="TS_TIPCOD" offset="0" size="21"/>
+  <part name="TS_ELEM" offset="21" size="20"/>
+ </key>
+ <schema name="TABSIG" size="152">
+  <field name="TS_TIPCOD" indexed="true" size="21" type="Alphanum" digits="21" scale="0"/>
+  <field name="TS_ELEM" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="TS_RESTO" size="111" type="Alphanum" digits="111" scale="0"/>
+ </schema>
+</table>

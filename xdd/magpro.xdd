@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="MAGPRO" minRecLen="744" maxRecLen="744">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="24"/>
+  <part name="CODICE" offset="0" size="20"/>
+  <part name="DEPOSITO" offset="20" size="2"/>
+  <part name="ANNO" offset="22" size="2"/>
+ </key>
+ <schema name="MAGPRO" size="744">
+  <field name="CODICE" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="DEPOSITO" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="ANNO" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="VALORE_INIZIALE" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="QTA_INIZIALE" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_ACQUISTATA" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_VENDUTA" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="RESI_CLIENTE" size="4" type="PackedSigned" digits="7" scale="2"/>
+  <field name="RESI_FORNITORE" size="4" type="PackedSigned" digits="7" scale="2"/>
+  <field name="CARICHI_INTERNI" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="SCARICHI_INTERNI" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="DIFFERENZA_INVENTARIALE" size="4" type="PackedSigned" digits="7" scale="2"/>
+  <field name="NR_VENDITE" size="3" type="PackedSigned" digits="5" scale="0"/>
+  <field name="CARICHI_NON_VALORIZZATI" size="1" type="PackedSigned" digits="1" scale="0"/>
+  <field name="VALORE_ENTRATE_1" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_USCITE_1" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_ACQUISTO_1" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_VENDITA_1" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_OBIETTIVO_1" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="QTA_ENTRATA_1" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_USCITA_1" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="QTA_VAL_ENTRATA_1" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_VAL_USCITA_1" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_CONSUMATA_1" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="VALORE_ENTRATE_2" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_USCITE_2" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_ACQUISTO_2" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_VENDITA_2" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_OBIETTIVO_2" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="QTA_ENTRATA_2" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_USCITA_2" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="QTA_VAL_ENTRATA_2" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_VAL_USCITA_2" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_CONSUMATA_2" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="VALORE_ENTRATE_3" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_USCITE_3" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_ACQUISTO_3" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_VENDITA_3" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_OBIETTIVO_3" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="QTA_ENTRATA_3" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_USCITA_3" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="QTA_VAL_ENTRATA_3" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_VAL_USCITA_3" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_CONSUMATA_3" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="VALORE_ENTRATE_4" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_USCITE_4" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_ACQUISTO_4" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_VENDITA_4" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_OBIETTIVO_4" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="QTA_ENTRATA_4" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_USCITA_4" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="QTA_VAL_ENTRATA_4" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_VAL_USCITA_4" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_CONSUMATA_4" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="VALORE_ENTRATE_5" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_USCITE_5" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_ACQUISTO_5" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_VENDITA_5" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_OBIETTIVO_5" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="QTA_ENTRATA_5" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_USCITA_5" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="QTA_VAL_ENTRATA_5" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_VAL_USCITA_5" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_CONSUMATA_5" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="VALORE_ENTRATE_6" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_USCITE_6" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_ACQUISTO_6" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_VENDITA_6" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_OBIETTIVO_6" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="QTA_ENTRATA_6" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_USCITA_6" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="QTA_VAL_ENTRATA_6" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_VAL_USCITA_6" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_CONSUMATA_6" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="VALORE_ENTRATE_7" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_USCITE_7" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_ACQUISTO_7" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_VENDITA_7" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_OBIETTIVO_7" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="QTA_ENTRATA_7" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_USCITA_7" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="QTA_VAL_ENTRATA_7" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_VAL_USCITA_7" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_CONSUMATA_7" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="VALORE_ENTRATE_8" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_USCITE_8" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_ACQUISTO_8" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_VENDITA_8" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_OBIETTIVO_8" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="QTA_ENTRATA_8" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_USCITA_8" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="QTA_VAL_ENTRATA_8" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_VAL_USCITA_8" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_CONSUMATA_8" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="VALORE_ENTRATE_9" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_USCITE_9" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_ACQUISTO_9" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_VENDITA_9" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_OBIETTIVO_9" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="QTA_ENTRATA_9" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_USCITA_9" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="QTA_VAL_ENTRATA_9" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_VAL_USCITA_9" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_CONSUMATA_9" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="VALORE_ENTRATE_10" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_USCITE_10" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_ACQUISTO_10" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_VENDITA_10" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_OBIETTIVO_10" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="QTA_ENTRATA_10" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_USCITA_10" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="QTA_VAL_ENTRATA_10" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_VAL_USCITA_10" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_CONSUMATA_10" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="VALORE_ENTRATE_11" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_USCITE_11" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_ACQUISTO_11" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_VENDITA_11" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_OBIETTIVO_11" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="QTA_ENTRATA_11" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_USCITA_11" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="QTA_VAL_ENTRATA_11" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_VAL_USCITA_11" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_CONSUMATA_11" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="VALORE_ENTRATE_12" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_USCITE_12" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_ACQUISTO_12" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="LORDO_VENDITA_12" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="VALORE_OBIETTIVO_12" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="QTA_ENTRATA_12" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_USCITA_12" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="QTA_VAL_ENTRATA_12" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_VAL_USCITA_12" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_CONSUMATA_12" size="5" type="PackedSigned" digits="9" scale="2"/>
+ </schema>
+</table>

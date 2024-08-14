@@ -1,0 +1,35 @@
+<XFDrules>
+	<rule sequence="1">
+		<when>
+			<field name="TIPO_TRASFORMAZIONE"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+	<rule sequence="2">
+		<when>
+			<field name="ULTIMA_MEDIA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+	
+	<rule sequence="3">
+		<when>
+			<field name="VENDITE_ULT_PERIODO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+</XFDrules>

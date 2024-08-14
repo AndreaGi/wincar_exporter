@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="MAGDEP" minRecLen="80" maxRecLen="80">
+ <key duplicate="false" primary="true">
+  <segment offset="10" size="22"/>
+  <part name="CODICE" offset="10" size="20"/>
+  <part name="DEPOSITO" offset="30" size="2"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="0" size="32"/>
+  <part name="POSIZIONE" offset="0" size="10"/>
+  <part name="CODICE" offset="10" size="20"/>
+  <part name="DEPOSITO" offset="30" size="2"/>
+ </key>
+ <schema name="MAGDEP" size="80">
+  <field name="POSIZIONE" indexed="true" size="10" type="Alphanum" digits="10" scale="0"/>
+  <field name="CODICE" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="DEPOSITO" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="QTA_ORDINATA" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="QTA_IMPEGNATA" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="DATA_ULTIMA_MEDIA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="QTA_ULTIMA_MEDIA" size="5" type="PackedSigned" digits="9" scale="3"/>
+  <field name="VENDUTO_ULTIMO_PERIODO" size="6" type="PackedSigned" digits="11" scale="2"/>
+  <field name="DATA_INVENTARIO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FILLER60" hidden="true" size="20" type="Alphanum" digits="20" scale="0"/>
+ </schema>
+</table>

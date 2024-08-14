@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="DOCT" minRecLen="215" maxRecLen="215">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="7"/>
+  <part name="DOCT_NUMER" offset="0" size="2"/>
+  <part name="DOCT_STATO" offset="2" size="1"/>
+  <part name="DOCT_NRDOC" offset="3" size="4"/>
+ </key>
+ <schema name="DOCT" size="215">
+  <field name="DOCT_NUMER" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DOCT_STATO" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DOCT_NRDOC" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="DOCT_DTTRA" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="DOCT_ORATRA" size="3" type="PackedPositive" digits="4" scale="2"/>
+  <field name="DOCT_VETTORE" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DOCT_COLLI" size="3" type="PackedPositive" digits="5" scale="0"/>
+  <field name="DOCT_ASPETTO" size="25" type="Alphanum" digits="25" scale="0"/>
+  <field name="DOCT_CAUSALE" size="25" type="Alphanum" digits="25" scale="0"/>
+  <field name="DOCT_NOMEDEST_N" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="DOCT_NOMEDEST_I" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="DOCT_CAPDEST" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="DOCT_CITYDEST" size="23" type="Alphanum" digits="23" scale="0"/>
+  <field name="DOCT_PROVDEST" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DOCT_TB_T9ADESCR" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DOCT_ORAVEN" size="3" type="PackedPositive" digits="4" scale="2"/>
+  <field name="DOCT_PESO" size="4" type="PackedPositive" digits="7" scale="2"/>
+  <field name="DOCT_IMP_PAGATO" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="FILLER175" hidden="true" size="40" type="Alphanum" digits="40" scale="0"/>
+ </schema>
+</table>

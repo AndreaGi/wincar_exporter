@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="MAGLIF" minRecLen="34" maxRecLen="34">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="22"/>
+  <part name="CODICE" offset="0" size="20"/>
+  <part name="ANNO" offset="20" size="2"/>
+ </key>
+ <schema name="MAGLIF" size="34">
+  <field name="CODICE" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="ANNO" indexed="true" size="2" type="NumUnsigned" digits="2" scale="0"/>
+  <field name="QTA" size="6" type="PackedPositive" digits="11" scale="2"/>
+  <field name="PREZZO" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="FLAG" size="1" type="Alphanum" digits="1" scale="0"/>
+ </schema>
+</table>

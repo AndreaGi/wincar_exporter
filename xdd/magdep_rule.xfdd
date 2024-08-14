@@ -1,0 +1,23 @@
+<XFDrules>
+	<rule sequence="1">
+		<when>
+			<field name="QTA_ULTIMA_MEDIA"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+	<rule sequence="2">
+		<when>
+			<field name="VENDUTO_ULTIMO_PERIODO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+</XFDrules>

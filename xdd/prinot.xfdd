@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="PRINOT" minRecLen="160" maxRecLen="160">
+ <key duplicate="false" primary="true">
+  <segment offset="16" size="9"/>
+  <part name="DATA_REGISTRAZIONE" offset="16" size="3"/>
+  <part name="NUMERO_REGISTRAZIONE" offset="19" size="4"/>
+  <part name="RIGA_REGISTRAZIONE" offset="23" size="2"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="1" size="6"/>
+  <segment offset="13" size="3"/>
+  <segment offset="19" size="4"/>
+  <segment offset="23" size="2"/>
+  <part name="CONTO" offset="1" size="6"/>
+  <part name="DATA_COMPETENZA" offset="13" size="3"/>
+  <part name="NUMERO_REGISTRAZIONE" offset="19" size="4"/>
+  <part name="RIGA_REGISTRAZIONE" offset="23" size="2"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="7" size="1"/>
+  <segment offset="8" size="5"/>
+  <segment offset="13" size="3"/>
+  <segment offset="19" size="4"/>
+  <segment offset="23" size="2"/>
+  <part name="SEZIONALE" offset="7" size="1"/>
+  <part name="CODICE_CF" offset="8" size="5"/>
+  <part name="DATA_COMPETENZA" offset="13" size="3"/>
+  <part name="NUMERO_REGISTRAZIONE" offset="19" size="4"/>
+  <part name="RIGA_REGISTRAZIONE" offset="23" size="2"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="13" size="3"/>
+  <segment offset="19" size="4"/>
+  <segment offset="23" size="2"/>
+  <part name="DATA_COMPETENZA" offset="13" size="3"/>
+  <part name="NUMERO_REGISTRAZIONE" offset="19" size="4"/>
+  <part name="RIGA_REGISTRAZIONE" offset="23" size="2"/>
+ </key>
+ <schema name="PRINOT" size="160">
+  <field name="FLAG_BOLLATO_0NO_1SI" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="CONTO" indexed="true" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="SEZIONALE" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE_CF" indexed="true" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="DATA_COMPETENZA" indexed="true" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_REGISTRAZIONE" indexed="true" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="NUMERO_REGISTRAZIONE" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="RIGA_REGISTRAZIONE" indexed="true" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="TIPO_MOVIMENTO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="TIPO_REGISTRAZIONE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="NUMERO_PROTOCOLLO" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="DARE_AVERE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="IMPORTO" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="CAUSALE_CONTABILE_JTT52" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DESCRIZIONE" size="25" type="Alphanum" digits="25" scale="0"/>
+  <field name="DESCRIZIONE_AGGIUNTIVA" size="25" type="Alphanum" digits="25" scale="0"/>
+  <field name="NUMERO_DOCUMENTO" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="DATA_DOCUMENTO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FLAG_NUOVO_USATO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="TARGA_USATO" size="8" type="Alphanum" digits="8" scale="0"/>
+  <field name="NR_PROGRESSIVO_USATO" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="NR_PROGRESSIVO_NUOVO" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="TERMINALE_UTENTE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="PROGRAMMA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="NR_RITENUTA_ACCONTO" size="5" type="NumUnsigned" digits="5" scale="0"/>
+  <field name="NR_RIGA_GIORNALE" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="FILLER127" hidden="true" size="33" type="Alphanum" digits="33" scale="0"/>
+ </schema>
+</table>

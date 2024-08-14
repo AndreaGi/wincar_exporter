@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="FAT" minRecLen="320" maxRecLen="320">
+ <key duplicate="false" primary="true">
+  <segment offset="9" size="5"/>
+  <part name="F_NUMER" offset="9" size="1"/>
+  <part name="F_NRFAT" offset="10" size="4"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="0" size="14"/>
+  <part name="F_CF" offset="0" size="1"/>
+  <part name="F_CLI" offset="1" size="5"/>
+  <part name="F_DTFAT" offset="6" size="3"/>
+  <part name="F_NUMER" offset="9" size="1"/>
+  <part name="F_NRFAT" offset="10" size="4"/>
+ </key>
+ <schema name="FAT" size="320">
+  <field name="F_CF" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_CLI" indexed="true" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="F_DTFAT" indexed="true" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="F_NUMER" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_NRFAT" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="F_PAGAM" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_SCAD" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="F_TOTFAT" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_TOTIVA" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_CODIVA_1" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="F_ALIQ_1" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="F_IMPONIBILE_1" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_AGGCLI_1" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="F_IMPOSTA_1" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="F_CODIVA_2" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="F_ALIQ_2" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="F_IMPONIBILE_2" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_AGGCLI_2" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="F_IMPOSTA_2" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="F_CODIVA_3" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="F_ALIQ_3" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="F_IMPONIBILE_3" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_AGGCLI_3" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="F_IMPOSTA_3" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="F_CODIVA_4" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="F_ALIQ_4" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="F_IMPONIBILE_4" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_AGGCLI_4" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="F_IMPOSTA_4" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="F_CODIVA_5" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="F_ALIQ_5" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="F_IMPONIBILE_5" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_AGGCLI_5" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="F_IMPOSTA_5" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="F_SEGNO_1" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_CONTO_1" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="F_IMPORTO_1" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_SEGNO_2" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_CONTO_2" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="F_IMPORTO_2" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_SEGNO_3" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_CONTO_3" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="F_IMPORTO_3" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_SEGNO_4" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_CONTO_4" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="F_IMPORTO_4" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_SEGNO_5" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_CONTO_5" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="F_IMPORTO_5" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_SEGNO_6" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_CONTO_6" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="F_IMPORTO_6" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_SEGNO_7" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_CONTO_7" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="F_IMPORTO_7" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_SEGNO_8" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_CONTO_8" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="F_IMPORTO_8" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_SEGNO_9" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_CONTO_9" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="F_IMPORTO_9" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_SEGNO_10" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_CONTO_10" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="F_IMPORTO_10" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_SEGNO_11" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_CONTO_11" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="F_IMPORTO_11" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_NU" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_TARGA_US" size="8" type="Alphanum" digits="8" scale="0"/>
+  <field name="F_NRPROGR_US" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="F_NRPROG_AN" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="F_AREA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_CODAGE" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="F_ACCONTI" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_FLAGACC" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="F_CAUSALE" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="F_STATO" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="F_DATREG" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="F_NREG" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="F_SPEINCASSO" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="F_OMAGGI" size="6" type="PackedSigned" digits="11" scale="0"/>
+  <field name="FILLER299" hidden="true" size="21" type="Alphanum" digits="21" scale="0"/>
+ </schema>
+</table>

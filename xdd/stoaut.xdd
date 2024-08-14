@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="STOAUT" minRecLen="754" maxRecLen="754">
+ <key duplicate="false" primary="true">
+  <segment offset="0" size="4"/>
+  <part name="PROGRESSIVO" offset="0" size="4"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="4" size="30"/>
+  <part name="RAGIONE_SOCIALE" offset="4" size="30"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="46" size="8"/>
+  <part name="S_KEY9" offset="46" size="8"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="116" size="5"/>
+  <segment offset="0" size="4"/>
+  <part name="CODICE_CLIENTE" offset="116" size="5"/>
+  <part name="PROGRESSIVO" offset="0" size="4"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="124" size="4"/>
+  <part name="NR_CONTRATTO_VENDITA" offset="124" size="4"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="129" size="14"/>
+  <part name="TELAIO" offset="129" size="14"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="190" size="8"/>
+  <part name="TARGA" offset="190" size="8"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="321" size="6"/>
+  <part name="S_KEY6" offset="321" size="6"/>
+ </key>
+ <key duplicate="true">
+  <segment offset="684" size="20"/>
+  <segment offset="129" size="14"/>
+  <part name="CODICE_MODELLO" offset="684" size="20"/>
+  <part name="TELAIO" offset="129" size="14"/>
+ </key>
+ <schema name="STOAUT" size="754">
+  <field name="PROGRESSIVO" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="RAGIONE_SOCIALE" indexed="true" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="FILLER0" size="4" type="Alphanum" digits="4" scale="0"/>
+  <field name="FILLER" size="4" type="Alphanum" digits="4" scale="0"/>
+  <field name="FILLER1" size="4" type="Alphanum" digits="4" scale="0"/>
+  <field name="S_KEY9" indexed="true" size="8" type="Alphanum" digits="8" scale="0"/>
+  <field name="S_CREATION_DATE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="S_CREATION_TIME" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="S_SINCRONIZZ_ES" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="FILLER64" hidden="true" size="7" type="Alphanum" digits="7" scale="0"/>
+  <field name="CITTA" size="23" type="Alphanum" digits="23" scale="0"/>
+  <field name="PROVINCIA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CAP" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="DATA_NASCITA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="TELEFONO" size="12" type="Alphanum" digits="12" scale="0"/>
+  <field name="CODICE_CLIENTE" indexed="true" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="PROFESSIONE_JTT64" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FILLER123" hidden="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="NR_CONTRATTO_VENDITA" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="SESSO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="TELAIO" indexed="true" size="14" type="Alphanum" digits="14" scale="0"/>
+  <field name="CODICE_MARCA_JTT76" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CODICE_MODELLO_STO" size="9" type="Alphanum" digits="9" scale="0"/>
+  <field name="MODEL_YEAR" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DESCRIZIONE_MODELLO" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="SEGMENTO" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DATA_INIZIO_GARANZIA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="TARGA" indexed="true" size="8" type="Alphanum" digits="8" scale="0"/>
+  <field name="DATA_FT_VENDITA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="NR_FT_VENDITA" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="VALORE_CONTRATTO" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="PERCENTUALE_SCONTO" size="3" type="PackedSigned" digits="4" scale="2"/>
+  <field name="MARCA_USATO_JTT76" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DESCRIZIONE_MODELLO_USATO" size="25" type="Alphanum" digits="25" scale="0"/>
+  <field name="TARGA_USATO" size="8" type="Alphanum" digits="8" scale="0"/>
+  <field name="DATA_IMMATRICOLAZIONE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="VALORE_RITIRO_USATO" size="5" type="PackedSigned" digits="9" scale="0"/>
+  <field name="NR_INTERVENTI_OFFICINA" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="FLAG_NUOVO_USATO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_ULTIMA_COMMESSA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="DATA_FINE_GARANZIA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="GRUPPO_MODELLO_JTT30" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="NR_MOTORE" size="13" type="Alphanum" digits="13" scale="0"/>
+  <field name="NR_CAMBIO" size="11" type="Alphanum" digits="11" scale="0"/>
+  <field name="COD_ENTE_VENDITORE" size="7" type="Alphanum" digits="7" scale="0"/>
+  <field name="ENTE_VENDITORE" size="23" type="Alphanum" digits="23" scale="0"/>
+  <field name="S_KEY6" indexed="true" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="S_FILLER1" size="27" type="Alphanum" digits="27" scale="0"/>
+  <field name="AREA_COMM_JET7A" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="AGENTE_JTT60" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FILLER2" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="TITOLO_STUDIO_JTT8A" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FILLER3" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FILLER4" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="TIPO_UTENTE_JTT86" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DATA_CONTRATTO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FILLER5" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FILLER6" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FILLER7" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FILLER8" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FILLER9" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="FILLER10" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FILLER11" size="25" type="Alphanum" digits="25" scale="0"/>
+  <field name="FILLER12" size="25" type="Alphanum" digits="25" scale="0"/>
+  <field name="FILLER13" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="NR_FIGLI" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="SECONDA_RAG_SOCIALE" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="TIPO_SOCIETA" size="4" type="Alphanum" digits="4" scale="0"/>
+  <field name="CITTA_NASCITA" size="23" type="Alphanum" digits="23" scale="0"/>
+  <field name="PROVINCIA_NASCITA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="KM" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="DATA_ARRIVO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="S_MATRICOLA_CRONO" size="10" type="Alphanum" digits="10" scale="0"/>
+  <field name="S_MARCA_CRONO" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="S_DTREV_CRONO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="S_REGNR_CRONO" size="4" type="NumUnsigned" digits="4" scale="0"/>
+  <field name="S_REGPAG_CRONO" size="3" type="NumUnsigned" digits="3" scale="0"/>
+  <field name="S_CATVEIC_CRONO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="S_PNEUS_CRONO" size="4" type="NumUnsigned" digits="4" scale="0"/>
+  <field name="S_TIPOPNEUS_CRONO" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="S_W1_CRONO" size="4" type="PackedPositive" digits="7" scale="3"/>
+  <field name="S_W_CRONO" size="4" type="NumUnsigned" digits="4" scale="3"/>
+  <field name="S_VERBALE_CRONO" size="50" type="Alphanum" digits="50" scale="0"/>
+  <field name="FILLER15" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FILLER16" size="14" type="Alphanum" digits="14" scale="0"/>
+  <field name="FILLER17" size="15" type="Alphanum" digits="15" scale="0"/>
+  <field name="PRIVACY" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FILLER18" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CATEGORIA_VEICOLO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FILLER19" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATA_REVISIONE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="ALIMENTAZIONE" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FILLER20" size="5" type="PackedPositive" digits="9" scale="0"/>
+  <field name="FILLERI21" size="7" type="Alphanum" digits="7" scale="0"/>
+  <field name="FILLER22" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FILLER23" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="S_SAVARENT_KM_P" size="4" type="PackedPositive" digits="6" scale="0"/>
+  <field name="S_SAVARENT_DT_INIZ" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="FILLER679" hidden="true" size="4" type="Alphanum" digits="4" scale="0"/>
+  <field name="FILLER24" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE_MODELLO" indexed="true" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="INDIRIZZO" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="S_SAVARENT_TIPO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="S_SAVARENT_NRCONTR" size="10" type="Alphanum" digits="10" scale="0"/>
+  <field name="S_SAVARENT_DT_SCAD" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="S_SAVARENT_KM_A" size="4" type="PackedPositive" digits="6" scale="0"/>
+ </schema>
+</table>

@@ -1,0 +1,24 @@
+<XFDrules>
+	<rule sequence="1">
+		<when>
+			<field name="OBBIETTIVO_TOTALE"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+	<rule sequence="2">
+		<when>
+			<field name="SCONTO_CONCESSO"/>
+		</when>
+		<do>
+			<add> 
+				<field cbdefault="0" onConvertError="null"/>
+			</add>
+		</do>
+	</rule>
+	
+</XFDrules>

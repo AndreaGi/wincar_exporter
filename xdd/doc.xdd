@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<table name="DOC" minRecLen="203" maxRecLen="203">
+ <key duplicate="false" primary="true">
+  <segment offset="18" size="9"/>
+  <part name="STATO" offset="18" size="1"/>
+  <part name="NUMERATORE" offset="19" size="2"/>
+  <part name="NUMERO_DOCUMENTO" offset="21" size="4"/>
+  <part name="NUMERO_RIGA" offset="25" size="2"/>
+ </key>
+ <schema name="DOC" size="203">
+  <field name="STATO_FATTURA" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE_CLIENTE" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="CODICE_PAGAMENTO_JTT02" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="CODICE_SCADENZA_JTT01" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DATA_PAGAMENTO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="SCONTO_CASSA" size="2" type="PackedPositive" digits="3" scale="1"/>
+  <field name="CODICE_AGENTE_JTT60" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CODICE_SPEDIZIONE_JTT08" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="STATO" indexed="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="NUMERATORE" indexed="true" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="NUMERO_DOCUMENTO" indexed="true" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="NUMERO_RIGA" indexed="true" size="2" type="PackedPositive" digits="3" scale="0"/>
+  <field name="DEPOSITO" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="DATA_DOCUMENTO" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_ZONA_JTT50" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="CATEGORIA_JTT06" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="NUMERO_ORDINE" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="DATA_ORDINE" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_ARTICOLO" size="20" type="Alphanum" digits="20" scale="0"/>
+  <field name="DESCRIZIONE_ARTICOLO" size="30" type="Alphanum" digits="30" scale="0"/>
+  <field name="FILLER93" hidden="true" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="CODICE_COMMESSO_JTTCO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="DATI_DESTINATARIO" size="5" type="Alphanum" digits="5" scale="0"/>
+  <field name="UNITA_MISURA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="QUANTITA" size="5" type="PackedSigned" digits="9" scale="2"/>
+  <field name="PREZZO" size="5" type="PackedSigned" digits="9" scale="1"/>
+  <field name="SCONTO_1" size="3" type="PackedSigned" digits="4" scale="2"/>
+  <field name="SCONTO_2" size="3" type="PackedSigned" digits="4" scale="2"/>
+  <field name="SCONTO_3" size="3" type="PackedSigned" digits="4" scale="2"/>
+  <field name="CODICE_IVA_JTT03" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="PROVVIGIONE" size="2" type="PackedPositive" digits="3" scale="1"/>
+  <field name="FILLER130" hidden="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="NUMERO_FATTURA" size="4" type="PackedSigned" digits="7" scale="0"/>
+  <field name="DATA_FATTURA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="QTA_ORDINATA" size="4" type="PackedSigned" digits="7" scale="2"/>
+  <field name="DATA_CONSEGNA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CODICE_RIGA_JTT27" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="FLAG_TIPO_RIGA" size="1" type="NumUnsigned" digits="1" scale="0"/>
+  <field name="CONTO_RICAVO" size="6" type="Alphanum" digits="6" scale="0"/>
+  <field name="NUMERO_COLLI" size="3" type="PackedSigned" digits="5" scale="0"/>
+  <field name="CATEGORIA_MERC_JET07" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="CLASSE_SCONTO_JET21" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="NUMERATORE_PROVENIENZA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="NUMERO_DOC_PROVENIENZA" size="4" type="PackedPositive" digits="7" scale="0"/>
+  <field name="DATA_DOC_PROVENIENZA" size="3" type="Alphanum" digits="3" scale="0"/>
+  <field name="TIPO_DOCUMENTO" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="GRUPPO_CLIENTE" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="FLAG_PREZZO_NETTO" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="NUMERO_MOVIMENTO" size="10" type="Alphanum" digits="10" scale="0"/>
+  <field name="FILLER186" hidden="true" size="1" type="Alphanum" digits="1" scale="0"/>
+  <field name="ALIQUOTA" size="2" type="Alphanum" digits="2" scale="0"/>
+  <field name="PESO" size="4" type="PackedPositive" digits="7" scale="3"/>
+  <field name="FILLER193" hidden="true" size="10" type="Alphanum" digits="10" scale="0"/>
+ </schema>
+</table>
